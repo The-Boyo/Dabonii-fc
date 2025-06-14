@@ -1,22 +1,25 @@
 .header {
 	display: grid;
 	grid-template-columns: 2fr 8fr 2fr;
-	height: 80px;
+	height: 100px;
 	grid-gap: 1em;
 	padding: 0.3em;
 	background: var(--dabonii-green);
+	border-bottom: 1px dashed;
+	/* position: fixed; */
+	width: 100%;
 }
 
 .header_logo {
 	font-style: italic;
 	font-family: cursive;
 	text-shadow: 2px 2px 3px;
-	animation: move_logo 3s infinite linear;
+	animation: move_logo 4s 2s infinite linear;
+	align-self: center;
 }
 
-.header_logo > span {
+.header_logo-link > span {
 	text-decoration: underline;
-	/* animation: move_logo 3s infinite linear; */
 }
 
 @keyframes move_logo {
@@ -25,7 +28,7 @@
 	}
 
 	50% {
-		transform: rotateY(80deg);
+		transform: rotateY(60deg);
 	}
 	100% {
 		transform: rotateY(0);
@@ -68,4 +71,5 @@
 	color: antiquewhite;
 	outline: none;
 	border-radius: 5px;
+	cursor: pointer;
 }

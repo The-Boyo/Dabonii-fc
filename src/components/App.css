@@ -12,6 +12,12 @@ a {
 	text-decoration: none;
 }
 
+.container {
+	min-height: 100vh;
+	position: relative;
+}
+
 :root {
-	--dabonii-green: rgb(72, 209, 72);
+	/* --dabonii-green: rgb(72, 209, 72); */
+	--dabonii-green: rgb(22, 129, 22);
 }

@@ -1,5 +1,14 @@
+import "./Footer.css";
+
 const Footer = () => {
-	return <div>Footer</div>;
+	return (
+		<footer className="footer">
+			<h3 className="footer_para">
+				All Rights Reserved &#169; Dabonii fc{" "}
+				{new Date(Date.now()).getFullYear()}
+			</h3>
+		</footer>
+	);
 };
 
 export default Footer;
