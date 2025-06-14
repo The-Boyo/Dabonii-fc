@@ -43,7 +43,27 @@
 	border-radius: 4px;
 }
 
+.nav-bar > h3 {
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.nav-bar > h3:hover {
+	font-size: 18px;
+}
+
 .auth {
+	display: grid;
+}
+
+.sign-in {
+	align-self: center;
 	justify-self: end;
-	/* margin-right: 0.5em; */
+	margin-right: 1em;
+	margin-bottom: 2em;
+	width: 5em;
+	background: rgb(13, 13, 14);
+	color: antiquewhite;
+	outline: none;
+	border-radius: 5px;
 }
