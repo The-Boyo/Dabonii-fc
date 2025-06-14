@@ -1,0 +1,10 @@
+.footer {
+	background: var(--dabonii-green);
+	height: 200px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	display: grid;
+	place-items: center;
+	box-shadow: 3px 0px 3px;
+}
