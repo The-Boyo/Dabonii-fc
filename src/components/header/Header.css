@@ -43,12 +43,14 @@
 	border-radius: 4px;
 }
 
-.nav-bar > h3 {
+.nav-bar > a {
 	font-size: 14px;
 	cursor: pointer;
+	color: black;
+	text-decoration: none;
 }
 
-.nav-bar > h3:hover {
+.nav-bar > a:hover {
 	font-size: 18px;
 }
 

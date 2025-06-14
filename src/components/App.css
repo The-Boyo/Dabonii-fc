@@ -7,6 +7,11 @@
 		Arial, sans-serif;
 }
 
+a {
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+}
+
 :root {
 	--dabonii-green: rgb(72, 209, 72);
 }
