@@ -1,7 +1,12 @@
-import App from "./components/App";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 
-const { createRoot } = require("react-dom/client");
+import App from "./components/App";
 
 const root = createRoot(document.getElementById("root"));
 
-root.render(<App />);
+root.render(
+	<StrictMode>
+		<App />
+	</StrictMode>
+);
