@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 
 import "./App.css";
+import Header from "./header/Header";
+import Footer from "./footer/Footer";
 
 const App = () => {
 	useEffect(() => {
@@ -13,7 +15,12 @@ const App = () => {
 		return () => window.removeEventListener("scroll", handleBodyScroll);
 	});
 
-	return <h1>App</h1>;
+	return (
+		<div className="container">
+			<Header />
+			<Footer />
+		</div>
+	);
 };
 
 export default App;
