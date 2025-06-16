@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import "./App.css";
@@ -14,15 +14,15 @@ import Matches from "./matches/Matches";
 import Training from "./training/Training";
 
 const App = () => {
-	useEffect(() => {
-		const handleBodyScroll = () => {
-			console.log("body scrolled");
-		};
+	// useEffect(() => {
+	// 	const handleBodyScroll = () => {
+	// 		console.log("body scrolled");
+	// 	};
 
-		window.addEventListener("scroll", handleBodyScroll);
+	// 	window.addEventListener("scroll", handleBodyScroll);
 
-		return () => window.removeEventListener("scroll", handleBodyScroll);
-	});
+	// 	return () => window.removeEventListener("scroll", handleBodyScroll);
+	// });
 
 	return (
 		<div className="container">
