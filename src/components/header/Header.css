@@ -59,12 +59,14 @@
 }
 
 .active_nav-bar {
-	background: rgb(185, 218, 181);
+	/* background: rgb(185, 218, 181);
 	width: 4em;
 	height: 1.5em;
 	border-radius: 7px;
 	display: grid;
-	place-content: center;
+	place-content: center; */
+	color: rgb(249, 249, 252);
+	text-shadow: 2px 2px 2px;
 }
 
 .auth {
