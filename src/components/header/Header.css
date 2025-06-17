@@ -85,3 +85,32 @@
 	border-radius: 5px;
 	cursor: pointer;
 }
+
+@media screen and (max-width: 602px) {
+	.header {
+		border: 1px solid red;
+		height: 310px;
+	}
+
+	.header_logo {
+		font-size: 13px;
+		align-self: start;
+	}
+
+	.nav-bar {
+		height: 300px;
+		grid-template-columns: repeat(1, 2fr);
+		background: var(--dabonii-green);
+		display: grid;
+		/* display: none; */
+		box-shadow: none;
+		border-radius: 0;
+	}
+
+	.auth {
+		align-self: start;
+		justify-self: end;
+		border: 1px solid red;
+		margin-top: 0.5em;
+	}
+}
