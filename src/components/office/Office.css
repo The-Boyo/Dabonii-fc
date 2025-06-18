@@ -1,0 +1,52 @@
+.office {
+	display: grid;
+	padding: 0.5em 0.3em;
+}
+
+.office-header {
+	justify-self: center;
+	/* margin-bottom: 1em; */
+}
+
+.chairman,
+.vice-chairman,
+.treasurer,
+.organising-secretary,
+.secretary {
+	width: 250px;
+	height: 300px;
+	box-shadow: 2px 2px 3px 1px;
+	border-radius: 7px;
+	display: grid;
+	grid-template-rows: 5fr 1fr 1fr;
+	place-items: center;
+}
+
+.holder-title {
+	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.chairman,
+.vice-chairman {
+	justify-self: center;
+	margin: 2em 0;
+}
+
+/* .treasurer,
+.organising-secretary,
+.secretary {
+} */
+
+.holder > img {
+	width: 200px;
+	height: 200px;
+}
+
+.sec-tresh {
+	background: rgb(250, 248, 248);
+	width: 100%;
+	padding: 1em;
+	display: grid;
+	grid-template-columns: repeat(3, 4fr);
+	place-items: center;
+}
