@@ -1,0 +1,102 @@
+.players-nav {
+	padding: 1em 0.3em;
+	margin-bottom: 1em;
+}
+
+.players-nav-list {
+	display: flex;
+}
+
+.players-nav-list > li {
+	list-style-type: none;
+	margin-left: 0.8em;
+	padding: 0.2em;
+	height: 25px;
+	width: 100px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.active-player-chosen {
+	border-radius: 5px;
+	background: rgb(13, 13, 14);
+	color: antiquewhite;
+	outline: none;
+}
+
+/* DEFENDERS */
+.defenders {
+	display: grid;
+}
+
+.defenders > h2 {
+	justify-self: center;
+	margin-bottom: 0.4em;
+	width: 100%;
+	text-align: center;
+}
+
+.goalkeepers-cont,
+.fullbacks-cont {
+	background: var(--the-grey);
+}
+
+/* .center-backs-cont {
+	background: var(--the-grey);
+} */
+
+.center-backs-cont,
+.fullbacks-cont,
+.goalkeepers-cont {
+	padding: 0.5em;
+}
+
+.center-backs-cont > h4,
+.fullbacks-cont > h4,
+.goalkeepers-cont > h4 {
+	margin-bottom: 0.4em;
+}
+
+.center-backs-cont > ul,
+.fullbacks-cont > ul,
+.goalkeepers-cont > ul {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(165px, 2fr));
+	row-gap: 1em;
+	padding: 0.7em 0;
+}
+
+.defender-profile {
+	width: 150px;
+	height: 180px;
+	box-shadow: 2px 2px 3px 1px;
+	border-radius: 7px;
+	display: grid;
+	grid-template-rows: 5fr 1fr 1fr;
+	place-items: center;
+	padding: 0.3em 0;
+	cursor: pointer;
+}
+
+.defender-profile:hover {
+	box-shadow: 2px 2px 3px 2px var(--dabonii-green);
+}
+
+.defender-profile > img {
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+}
+
+.defender-profile > h3 {
+	font-style: italic;
+}
+
+.defender-profile > p {
+	opacity: 0.7;
+	/* font-style: italic; */
+}
+
+.defender-profile > p > span {
+	font-style: normal;
+}
