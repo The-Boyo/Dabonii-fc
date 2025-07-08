@@ -12,7 +12,9 @@
 .vice-chairman,
 .treasurer,
 .organising-secretary,
-.secretary {
+.secretary,
+.assistant,
+.holder {
 	width: 250px;
 	height: 300px;
 	box-shadow: 2px 2px 3px 1px;
@@ -40,14 +42,51 @@
 .holder > img {
 	width: 200px;
 	height: 200px;
-	border-radius:50%;
+	border-radius: 50%;
 }
 
-.sec-tresh {
-	background: rgb(250, 248, 248);
+.sec-tresh,
+.assist-sec-tresh,
+.other-holders {
+	background: rgb(247, 244, 244);
 	width: 100%;
 	padding: 1em;
 	display: grid;
-	grid-template-columns: repeat(3, 4fr);
 	place-items: center;
+}
+
+.sec-tresh,
+.assist-sec-tresh {
+	grid-template-columns: repeat(3, 4fr);
+}
+
+.assist-sec-tresh {
+	padding-top: 3em;
+}
+
+.other-holders-cont {
+	position: relative;
+	width: 100%;
+	height: 400px;
+}
+
+.other-holders {
+	grid-template-columns: repeat(5, 2fr);
+	gap: 1em;
+	padding-top: 2em;
+	background: none;
+}
+
+@media screen and (max-width: 1378px) {
+	.other-holders {
+		overflow-x: scroll;
+		scroll-behavior: smooth;
+		position: absolute;
+		width: 100%;
+	}
+
+	.sec-tresh,
+	.assist-sec-tresh {
+		overflow-x: hidden;
+	}
 }
