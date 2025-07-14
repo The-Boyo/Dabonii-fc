@@ -53,15 +53,15 @@ const Defenders = () => {
 		<div className="defenders">
 			<h2>Defenders</h2>
 			<div>
-				<div className="goalkeepers-cont">
+				<div className="goalkeepers-cont position-container">
 					<h4>GoalKeepers</h4>
 					<ul>{renderGoalkeepers()}</ul>
 				</div>
-				<div className="center-backs-cont">
+				<div className="center-backs-cont position-container">
 					<h4>Center-Backs</h4>
 					<ul>{renderCenterBacks()}</ul>
 				</div>
-				<div className="fullbacks-cont">
+				<div className="fullbacks-cont position-container">
 					<h4>Fullbacks</h4>
 					<ul>{renderFullbacks()}</ul>
 				</div>
