@@ -1,9 +1,9 @@
-import { faker } from "@faker-js/faker";
 import {
 	getCenterBacks,
 	getFullbacks,
 	getGoalkeepers,
 } from "../../store/fetchData";
+import PlayersCard from "./PlayersCard";
 
 const Defenders = () => {
 	const goalkeepers = getGoalkeepers();
@@ -13,18 +13,11 @@ const Defenders = () => {
 	const renderGoalkeepers = () => {
 		return goalkeepers.map((keeper) => {
 			return (
-				<li className="the-center-back defender-profile" key={keeper.id}>
-					<img
-						src={faker.image.personPortrait({ sex: "male" })}
-						alt={`${keeper.name}-image`}
-					/>
-					<h3 className="center-back-name">{keeper.name}</h3>
-					<p className="center-back-position">
-						Position: <span>{keeper.position}</span>
-					</p>
-					<p className="center-back-age">
-						Age: <span>{keeper.age}</span>
-					</p>
+				<li
+					key={keeper.id}
+					className={`dabonii-player ${keeper.name.split(" ")[0]}-${keeper.position}`}
+				>
+					<PlayersCard player={keeper} />
 				</li>
 			);
 		});
@@ -33,18 +26,11 @@ const Defenders = () => {
 	const renderCenterBacks = () => {
 		return centerBacks.map((cb) => {
 			return (
-				<li className="the-center-back defender-profile" key={cb.id}>
-					<img
-						src={faker.image.personPortrait({ sex: "male" })}
-						alt={`${cb.name}-image`}
-					/>
-					<h3 className="center-back-name">{cb.name}</h3>
-					<p className="center-back-position">
-						Position: <span>{cb.position}</span>
-					</p>
-					<p className="center-back-age">
-						Age: <span>{cb.age}</span>
-					</p>
+				<li
+					key={cb.id}
+					className={`dabonii-player ${cb.name.split(" ")[0]}-${cb.position}`}
+				>
+					<PlayersCard player={cb} />
 				</li>
 			);
 		});
@@ -53,18 +39,11 @@ const Defenders = () => {
 	const renderFullbacks = () => {
 		return fullbacks.map((fb) => {
 			return (
-				<li className="the-fullback defender-profile" key={fb.id}>
-					<img
-						src={faker.image.personPortrait({ sex: "male" })}
-						alt={`${fb.name}-image`}
-					/>
-					<h3 className="fullback-name">{fb.name}</h3>
-					<p className="fullback-position">
-						Position: <span>{fb.position}</span>
-					</p>
-					<p className="fullback-age">
-						Age: <span>{fb.age}</span>
-					</p>
+				<li
+					key={fb.id}
+					className={`dabonii-player ${fb.name.split(" ")[0]}-${fb.position}`}
+				>
+					<PlayersCard player={fb} />
 				</li>
 			);
 		});
