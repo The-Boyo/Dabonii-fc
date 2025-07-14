@@ -63,10 +63,11 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(165px, 2fr));
 	row-gap: 1em;
-	padding: 0.7em 0;
+	padding: 0.7em 0.8em;
+	list-style-type: none;
 }
 
-.defender-profile {
+.dabonii-player {
 	width: 150px;
 	height: 180px;
 	box-shadow: 2px 2px 3px 1px;
@@ -78,25 +79,22 @@
 	cursor: pointer;
 }
 
-.defender-profile:hover {
+.dabonii-player:hover {
 	box-shadow: 2px 2px 3px 2px var(--dabonii-green);
 }
 
-.defender-profile > img {
+.dabonii-player-image {
 	height: 100px;
 	width: 100px;
 	border-radius: 50%;
 }
 
-.defender-profile > h3 {
-	font-style: italic;
-}
-
-.defender-profile > p {
+.dabonii-player-position,
+.dabonii-player-age {
 	opacity: 0.7;
 	/* font-style: italic; */
 }
 
-.defender-profile > p > span {
+.dabonii-player > p > span {
 	font-style: normal;
 }

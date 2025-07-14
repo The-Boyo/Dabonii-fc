@@ -133,6 +133,7 @@ export const getCenterBacks = () => {
 		{ name: "Joseph Ngina", age: 39, position: "CB", id: 5 },
 		{ name: "Lwanga Viketi", age: 43, position: "CB", id: 6 },
 		{ name: "Robert Sifuma", age: 40, position: "CB", id: 7 },
+		{ name: "Idris", age: 31, position: "CB", id: 8 },
 	];
 };
 
@@ -141,15 +142,18 @@ export const getFullbacks = () => {
 		{ name: "Joshua Junior", age: "28", position: "RB", id: 1 },
 		{ name: "Omanyala Oma", age: "23", position: "RB", id: 2 },
 		{ name: "Eshbon Moha", age: "35", position: "LB", id: 3 },
-		{ name: "Martin Mbaya", age: "36", position: "RB", id: 4 },
+		{ name: "Martin Mbaya", age: "38", position: "RB", id: 4 },
 		{ name: "Dan Lumiti", age: "31", position: "RB", id: 5 },
+		{ name: "Chris Jadolo", age: "40", position: "RB", id: 6 },
+		{ name: "Clinton Bukele", age: "26", position: "LB", id: 7 },
+		{ name: "Mugesto", age: "25", position: "RB", id: 8 },
 	];
 };
 
 export const getGoalkeepers = () => {
 	return [
 		{ name: "Allan Allano", age: 31, position: "Goalkeeper", id: 1 },
-		{ name: "Collins Collo", age: 17, position: "GoalKeeper", id: 2 },
-		{ name: "Jagoal", age: 23, position: "Goalkeeper" },
+		{ name: "Collins Collo", age: 17, position: "Goalkeeper", id: 2 },
+		{ name: "Jagoal", age: 23, position: "Goalkeeper", id: 3 },
 	];
 };
