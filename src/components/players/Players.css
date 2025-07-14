@@ -25,11 +25,13 @@
 }
 
 /* DEFENDERS */
-.defenders {
+.defenders,
+.midfielders {
 	display: grid;
 }
 
-.defenders > h2 {
+.defenders > h2,
+.midfielders > h2 {
 	justify-self: center;
 	margin-bottom: 0.4em;
 	width: 100%;
@@ -37,7 +39,8 @@
 }
 
 .goalkeepers-cont,
-.fullbacks-cont {
+.fullbacks-cont,
+.dm-cont {
 	background: var(--the-grey);
 }
 
@@ -45,21 +48,15 @@
 	background: var(--the-grey);
 } */
 
-.center-backs-cont,
-.fullbacks-cont,
-.goalkeepers-cont {
+.position-container {
 	padding: 0.5em;
 }
 
-.center-backs-cont > h4,
-.fullbacks-cont > h4,
-.goalkeepers-cont > h4 {
+.position-container > h4 {
 	margin-bottom: 0.4em;
 }
 
-.center-backs-cont > ul,
-.fullbacks-cont > ul,
-.goalkeepers-cont > ul {
+.position-container > ul {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(165px, 2fr));
 	row-gap: 1em;

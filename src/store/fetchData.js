@@ -124,6 +124,7 @@ export const getOffice = () => {
 	];
 };
 
+/**DEFENDERS DATA */
 export const getCenterBacks = () => {
 	return [
 		{ name: "Samuel Njoroge", age: 37, position: "CB", id: 1 },
@@ -155,5 +156,68 @@ export const getGoalkeepers = () => {
 		{ name: "Allan Allano", age: 31, position: "Goalkeeper", id: 1 },
 		{ name: "Collins Collo", age: 17, position: "Goalkeeper", id: 2 },
 		{ name: "Jagoal", age: 23, position: "Goalkeeper", id: 3 },
+	];
+};
+
+/**MIDFIELERS DATA */
+
+export const getMidfielders = () => {
+	return [
+		{
+			name: "Kennedy Atendo",
+			age: "31",
+			position: "Attacking Midfielder",
+			id: 1,
+			strengths: "speed, shooting, dribbling",
+			personality: "joker",
+		},
+		{
+			name: "Kennedy Atendo",
+			age: "31",
+			position: "Attacking Midfielder",
+			id: 2,
+			strengths: "speed, shooting, dribbling",
+			personality: "joker",
+		},
+		{
+			name: "Kennedy Atendo",
+			age: "31",
+			position: "Attacking Midfielder",
+			id: 3,
+			strengths: "speed, shooting, dribbling",
+			personality: "joker",
+		},
+		{
+			name: "Kennedy Atendo",
+			age: "31",
+			position: "Attacking Midfielder",
+			id: 4,
+			strengths: "speed, shooting, dribbling",
+			personality: "joker",
+		},
+		{
+			name: "Kennedy Atendo",
+			age: "31",
+			position: "Defensive Midfielder",
+			id: 5,
+			strengths: "speed, shooting, dribbling",
+			personality: "joker",
+		},
+		{
+			name: "Kennedy Atendo",
+			age: "31",
+			position: "Defensive Midfielder",
+			id: 5,
+			strengths: "speed, shooting, dribbling",
+			personality: "joker",
+		},
+		{
+			name: "Kennedy Atendo",
+			age: "31",
+			position: "Defensive Midfielder",
+			id: 5,
+			strengths: "speed, shooting, dribbling",
+			personality: "joker",
+		},
 	];
 };

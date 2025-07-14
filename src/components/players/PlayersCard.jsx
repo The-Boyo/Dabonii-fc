@@ -1,5 +1,15 @@
 import { faker } from "@faker-js/faker";
 
+const shortenPositionNames = (pos) => {
+	if (pos === "Goalkeeper") return "Goalie";
+
+	if (pos === "Attacking Midfielder") return "AM";
+
+	if (pos === "Defensive Midfielder") return "DM";
+
+	return pos;
+};
+
 const PlayersCard = ({ player }) => {
 	return (
 		<>
@@ -10,10 +20,7 @@ const PlayersCard = ({ player }) => {
 			/>
 			<h3 className="dabonii-player-name">{player.name}</h3>
 			<p className="dabonii-player-position">
-				Position:{" "}
-				<span>
-					{player.position === "Goalkeeper" ? "Goalie" : player.position}
-				</span>
+				Position: <span>{shortenPositionNames(player.position)}</span>
 			</p>
 			<p className="dabonii-player-age">
 				Age: <span>{player.age}</span>
