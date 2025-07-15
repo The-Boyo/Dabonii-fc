@@ -27,7 +27,7 @@ const PlayersCard = ({ player }) => {
 				Position: <span>{shortenPositionNames(player.position)}</span>
 			</p>
 			<p className="dabonii-player-age">
-				Age: <span>{player.age}</span>
+				Strength: <span>{player.strengths.split(",")[0]}</span>
 			</p>
 		</>
 	);

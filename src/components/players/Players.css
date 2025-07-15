@@ -92,9 +92,18 @@
 .dabonii-player-position,
 .dabonii-player-age {
 	opacity: 0.7;
+	font-size: 13px;
 	/* font-style: italic; */
 }
 
-.dabonii-player > p > span {
-	font-style: normal;
+.dabonii-player-position {
+	margin-bottom: 0.3em;
+}
+
+.dabonii-player-age {
+	padding: 0 0.3em;
+}
+
+.dabonii-player-age > span {
+	font-size: 11px;
 }
