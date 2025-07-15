@@ -7,6 +7,10 @@ const shortenPositionNames = (pos) => {
 
 	if (pos === "Defensive Midfielder") return "DM";
 
+	if (pos === "Right Winger") return "RW";
+
+	if (pos === "Left Winger") return "LW";
+
 	return pos;
 };
 
