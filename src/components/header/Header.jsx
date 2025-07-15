@@ -12,7 +12,7 @@ const Header = () => {
 			console.log("body has scrolled...");
 			console.log(window.scrollY);
 
-			if (window.scrollY > 100) {
+			if (window.scrollY > 0) {
 				headerRef.current.style.position = "fixed";
 			} else {
 				headerRef.current.style.position = "relative";
