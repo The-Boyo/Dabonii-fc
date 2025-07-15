@@ -376,6 +376,14 @@ export const getMidfielders = () => {
 			strengths: "Shooting, Dribbling, Passing",
 			personality: "Competent",
 		},
+		{
+			name: "Castro Opiyo",
+			age: "33",
+			position: "Defensive Midfielder",
+			id: 9,
+			strengths: "Passing, Vision, Strength",
+			personality: "Compassionate",
+		},
 	];
 };
 

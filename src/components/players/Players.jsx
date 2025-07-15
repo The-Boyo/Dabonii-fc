@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import "./Players.css";
 import Defenders from "./Defenders";
@@ -8,7 +8,26 @@ import Attackers from "./Attackers";
 const Players = () => {
 	const [chosenPlayers, setChosenPlayers] = useState("defenders");
 
-	console.log(chosenPlayers);
+	const playersNavRef = useRef();
+
+	useEffect(() => {
+		const handleBodyScroll = () => {
+			console.log("body has scrolled...");
+			console.log(window.scrollY);
+
+			if (window.scrollY > 0) {
+				playersNavRef.current.style.position = "fixed";
+				playersNavRef.current.style.top = "100px";
+			} else {
+				playersNavRef.current.style.position = "relative";
+				playersNavRef.current.style.top = 0;
+			}
+		};
+
+		window.addEventListener("scroll", handleBodyScroll);
+
+		return () => window.removeEventListener("scroll", handleBodyScroll);
+	});
 
 	const renderPlayers = () => {
 		if (chosenPlayers === "defenders") {
@@ -26,7 +45,7 @@ const Players = () => {
 
 	return (
 		<section className="players">
-			<nav className="players-nav">
+			<nav className="players-nav" ref={playersNavRef}>
 				<ul className="players-nav-list">
 					<li
 						className={

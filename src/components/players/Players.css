@@ -1,6 +1,11 @@
 .players-nav {
 	padding: 1em 0.3em;
 	margin-bottom: 1em;
+	/* position: fixed; */
+	/* top: 100px; */
+	width: 100%;
+	background: white;
+	z-index: 1;
 }
 
 .players-nav-list {
