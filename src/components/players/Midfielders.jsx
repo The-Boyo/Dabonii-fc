@@ -21,7 +21,7 @@ const Midfielders = () => {
 			<h2>Midfielders</h2>
 			<div>
 				<div className="dm-cont position-container">
-					<h4>Defensive Midfilders</h4>
+					<h4>Defensive Midfielders</h4>
 					<ul>{renderMidfielders("Defensive Midfielder")}</ul>
 				</div>
 				<div className="am-cont position-container">

@@ -26,12 +26,14 @@
 
 /* DEFENDERS */
 .defenders,
-.midfielders {
+.midfielders,
+.attackers {
 	display: grid;
 }
 
 .defenders > h2,
-.midfielders > h2 {
+.midfielders > h2,
+.attackers > h2 {
 	justify-self: center;
 	margin-bottom: 0.4em;
 	width: 100%;
@@ -40,7 +42,8 @@
 
 .goalkeepers-cont,
 .fullbacks-cont,
-.dm-cont {
+.dm-cont,
+.st-cont {
 	background: var(--the-grey);
 }
 
