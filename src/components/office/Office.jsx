@@ -2,8 +2,13 @@ import { faker } from "@faker-js/faker";
 
 import { getOffice } from "../../store/fetchData";
 import "./Office.css";
+import { useEffect } from "react";
 
 const Office = () => {
+	useEffect(() => {
+		console.log(document.querySelector(".content"));
+	});
+
 	const renderTheOffice = () => {
 		const offe = getOffice();
 
@@ -148,7 +153,7 @@ const Office = () => {
 	};
 
 	return (
-		<section className="office">
+		<section className="content office">
 			<h1 className="office-header">The Office</h1>
 			<div className="office-holders">{renderTheOffice()}</div>
 		</section>
