@@ -2,7 +2,7 @@ import React from "react";
 
 const Matches = () => {
 	return (
-		<section className="matches">
+		<section className="content matches">
 			<h1>Matches</h1>
 		</section>
 	);

@@ -9,9 +9,6 @@ const Header = () => {
 
 	useEffect(() => {
 		const handleBodyScroll = () => {
-			console.log("body has scrolled...");
-			console.log(window.scrollY);
-
 			if (window.scrollY > 0) {
 				headerRef.current.style.position = "fixed";
 			} else {
@@ -32,6 +29,13 @@ const Header = () => {
 				</Link>
 			</h2>
 			<div className="nav-bar">
+				<Link to={"/"}>
+					<h3
+						className={`nav_elem nav_fans ${location.pathname === "/" ? "active_nav-bar" : ""}`}
+					>
+						Home
+					</h3>
+				</Link>
 				<Link to={"/office"}>
 					<h3
 						className={`nav_elem nav_office ${location.pathname.includes("office") ? "active_nav-bar" : ""}`}
@@ -44,20 +48,6 @@ const Header = () => {
 						className={`nav_elem nav_players ${location.pathname.includes("players") ? "active_nav-bar" : ""} `}
 					>
 						Players
-					</h3>
-				</Link>
-				<Link to={"/fans"}>
-					<h3
-						className={`nav_elem nav_fans ${location.pathname.includes("fans") ? "active_nav-bar" : ""}`}
-					>
-						Fans
-					</h3>
-				</Link>
-				<Link to={"/events"}>
-					<h3
-						className={`nav_elem nav_events ${location.pathname.includes("events") ? "active_nav-bar" : ""}`}
-					>
-						Events
 					</h3>
 				</Link>
 				<Link to={"/matches"}>

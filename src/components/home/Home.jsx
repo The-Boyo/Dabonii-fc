@@ -1,6 +1,6 @@
 const Home = () => {
 	return (
-		<section style={{ height: "1000px" }}>
+		<section className="content home">
 			<h1>Home</h1>
 		</section>
 	);

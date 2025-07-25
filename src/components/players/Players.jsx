@@ -44,7 +44,7 @@ const Players = () => {
 	};
 
 	return (
-		<section className="players">
+		<section className="content players">
 			<nav className="players-nav" ref={playersNavRef}>
 				<ul className="players-nav-list">
 					<li

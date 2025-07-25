@@ -2,7 +2,7 @@ import React from "react";
 
 const Training = () => {
 	return (
-		<section>
+		<section className="content training">
 			<h1>Training</h1>
 		</section>
 	);
