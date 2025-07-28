@@ -87,32 +87,67 @@
 	cursor: pointer;
 }
 
-/* Phones */
-/* 
-@media screen and (max-width: 602px) {
+.button_open-close {
+	justify-self: end;
+	align-self: center;
+	margin-right: 10px;
+	cursor: pointer;
+	display: none;
+}
+
+.button_open-close > div {
+	width: 1.5em;
+	height: 3px;
+	background: #000;
+	margin-bottom: 3px;
+	border-radius: 5px;
+}
+
+/**Screens less than 700px */
+
+@media screen and (max-width: 700px) {
 	.header {
-		border: 1px solid red;
-		height: 310px;
+		grid-template-columns: 2fr 2fr;
 	}
 
 	.header_logo {
-		font-size: 13px;
-		align-self: start;
+		font-size: 20px;
 	}
 
 	.nav-bar {
-		height: 300px;
-		grid-template-columns: repeat(1, 2fr);
+		position: absolute;
+		top: 100px;
+		left: 0;
+		z-index: 1;
+		width: 100%;
+		height: 70vh;
+		min-height: 300px;
+		border-radius: none;
 		background: var(--dabonii-green);
-		display: grid;
 		box-shadow: none;
-		border-radius: 0;
+		display: none;
+		grid-template-columns: 3fr;
+		animation: navbarAppears 1s 1 linear;
 	}
 
-	.auth {
-		align-self: start;
-		justify-self: end;
-		border: 1px solid red;
-		margin-top: 0.5em;
+	@keyframes navbarAppears {
+		0% {
+			top: -500px;
+		}
+		100% {
+			top: 100px;
+		}
 	}
-} */
+
+	.button_open-close {
+		display: block;
+	}
+}
+
+/* Screens less than 392px*/
+
+@media screen and (max-width: 392px) {
+	.header_logo {
+		font-size: 15px;
+	}
+}

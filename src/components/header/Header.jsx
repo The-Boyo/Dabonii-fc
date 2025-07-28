@@ -1,10 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Header = () => {
-	const headerRef = useRef();
+	// State Hooks
+	const [navbarState, setNavBar] = useState(false);
 
+	// Refs
+	const headerRef = useRef();
+	const createOpenCloseRef = useRef();
+	const navRef = useRef();
+
+	// Locations Hook
 	const location = useLocation();
 
 	useEffect(() => {
@@ -21,6 +28,17 @@ const Header = () => {
 		return () => window.removeEventListener("scroll", handleBodyScroll);
 	});
 
+	const handleOpenCloseClick = () => {
+		console.log(navRef.current);
+		if (navbarState) {
+			navRef.current.style.display = "none";
+			setNavBar(false);
+		} else {
+			navRef.current.style.display = "grid";
+			setNavBar(true);
+		}
+	};
+
 	return (
 		<header className="header" ref={headerRef}>
 			<h2 className="header_logo">
@@ -28,7 +46,7 @@ const Header = () => {
 					fc <span>Dabonii</span>
 				</Link>
 			</h2>
-			<div className="nav-bar">
+			<div className="nav-bar" ref={navRef}>
 				<Link to={"/"}>
 					<h3
 						className={`nav_elem nav_fans ${location.pathname === "/" ? "active_nav-bar" : ""}`}
@@ -64,9 +82,25 @@ const Header = () => {
 						Training
 					</h3>
 				</Link>
+				<Link to={`/about`}>
+					<h3
+						className={`nav_elem nav_training ${location.pathname.includes("about") ? "active_nav-bar" : ""}`}
+					>
+						About
+					</h3>
+				</Link>
 			</div>
-			<div className="auth">
+			{/* <div className="auth">
 				<button className="sign-in">Sign In</button>
+			</div> */}
+			<div
+				className="button_open-close"
+				onClick={handleOpenCloseClick}
+				ref={createOpenCloseRef}
+			>
+				<div className="open_close-1"></div>
+				<div className="open_close-2"></div>
+				<div className="open_close-3"></div>
 			</div>
 		</header>
 	);

@@ -10,6 +10,7 @@ import Home from "./home/Home";
 import Players from "./players/Players";
 import Matches from "./matches/Matches";
 import Training from "./training/Training";
+import About from "./about/About";
 
 const App = () => {
 	const setFooterPosition = () => {
@@ -50,6 +51,7 @@ const App = () => {
 					<Route path={"/players"} exact element={<Players />} />
 					<Route path={"/matches"} exact element={<Matches />} />
 					<Route path={"/training"} exact element={<Training />} />
+					<Route path="/about" exact element={<About />} />
 				</Routes>
 				<Footer />
 			</BrowserRouter>
