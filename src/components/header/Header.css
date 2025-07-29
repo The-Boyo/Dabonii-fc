@@ -112,6 +112,7 @@
 
 	.header_logo {
 		font-size: 20px;
+		z-index: 2;
 	}
 
 	.nav-bar {
@@ -120,9 +121,9 @@
 		left: 0;
 		z-index: 1;
 		width: 100%;
-		height: 70vh;
+		height: 80vh;
 		min-height: 300px;
-		border-radius: none;
+		border-radius: 0;
 		background: var(--dabonii-green);
 		box-shadow: none;
 		display: none;
@@ -141,6 +142,7 @@
 
 	.button_open-close {
 		display: block;
+		z-index: 2;
 	}
 }
 

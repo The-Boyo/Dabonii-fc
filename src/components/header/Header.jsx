@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 const Header = () => {
 	// State Hooks
 	const [navbarState, setNavBar] = useState(false);
+	const [headerWidth, setHeaderWidth] = useState(null);
 
 	// Refs
 	const headerRef = useRef();
@@ -23,13 +24,32 @@ const Header = () => {
 			}
 		};
 
+		const headerResizeObserver = new ResizeObserver(() => {
+			if (headerRef.current.getBoundingClientRect().width > 700) {
+				setNavBar(false);
+			}
+			setHeaderWidth(headerRef.current.getBoundingClientRect().width);
+		});
+
+		if (headerWidth >= 700) {
+			navRef.current.style.display = "grid";
+			setNavBar(false);
+		} else {
+			navRef.current.style.display = "none";
+		}
+
+		headerResizeObserver.observe(headerRef.current);
+
 		window.addEventListener("scroll", handleBodyScroll);
 
-		return () => window.removeEventListener("scroll", handleBodyScroll);
-	});
+		return () => {
+			window.removeEventListener("scroll", handleBodyScroll);
+			headerResizeObserver.disconnect();
+		};
+	}, [headerWidth]);
 
 	const handleOpenCloseClick = () => {
-		console.log(navRef.current);
+		console.log(navbarState);
 		if (navbarState) {
 			navRef.current.style.display = "none";
 			setNavBar(false);
@@ -39,13 +59,8 @@ const Header = () => {
 		}
 	};
 
-	return (
-		<header className="header" ref={headerRef}>
-			<h2 className="header_logo">
-				<Link to={"/"} className="header_logo-link">
-					fc <span>Dabonii</span>
-				</Link>
-			</h2>
+	const renderNavbar = () => {
+		return (
 			<div className="nav-bar" ref={navRef}>
 				<Link to={"/"}>
 					<h3
@@ -90,6 +105,17 @@ const Header = () => {
 					</h3>
 				</Link>
 			</div>
+		);
+	};
+
+	return (
+		<header className="header" ref={headerRef}>
+			<h2 className="header_logo">
+				<Link to={"/"} className="header_logo-link">
+					fc <span>Dabonii</span>
+				</Link>
+			</h2>
+			{renderNavbar()}
 			{/* <div className="auth">
 				<button className="sign-in">Sign In</button>
 			</div> */}
