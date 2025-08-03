@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Player as an emoji
+
+An emoji to describe the personality of a player
+
 ## Available Scripts
 
 In the project directory, you can run:
