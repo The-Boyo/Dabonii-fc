@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import "./App.css";
@@ -13,6 +13,10 @@ import Training from "./training/Training";
 import About from "./about/About";
 
 const App = () => {
+	const [theCurrentContentHeight, setCurrentContentHeight] = useState(null);
+
+	console.log(theCurrentContentHeight);
+
 	const setFooterPosition = () => {
 		const containerHeight = document
 			.querySelector(".container")
@@ -21,6 +25,8 @@ const App = () => {
 		const currentContentHeight = document
 			.querySelector(".content")
 			.getBoundingClientRect().height;
+
+		setCurrentContentHeight(currentContentHeight);
 
 		const footerHeight = document
 			.querySelector(".footer")
@@ -39,7 +45,7 @@ const App = () => {
 		resizeObserver.observe(document.querySelector(".container"));
 
 		return () => resizeObserver.disconnect();
-	});
+	}, [theCurrentContentHeight]);
 
 	return (
 		<div className="container">

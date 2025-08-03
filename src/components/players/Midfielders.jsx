@@ -1,16 +1,36 @@
+import { useState } from "react";
 import { getMidfielders } from "../../store/fetchData";
 import PlayersCard from "./PlayersCard";
+import { createPortal } from "react-dom";
+import PlayerDetailsModal from "../modal/PlayerDetailsModal";
 
 const Midfielders = () => {
+	const [isPortalOpen, setPortal] = useState(false);
+
 	const midfielders = getMidfielders();
+
+	const handlePlayerListClick = () => {
+		console.log("Hey Eliud");
+		setPortal(true);
+	};
 
 	const renderMidfielders = (pos) => {
 		return midfielders.map((mida) => {
 			if (pos === mida.position) {
 				return (
-					<li className={`dabonii-player ${mida.name}-${mida.position}`}>
-						<PlayersCard player={mida} />
-					</li>
+					<>
+						<li
+							onClick={handlePlayerListClick}
+							className={`dabonii-player ${mida.name}-${mida.position}`}
+						>
+							<PlayersCard player={mida} />
+						</li>
+						{isPortalOpen &&
+							createPortal(
+								<PlayerDetailsModal onClose={() => setPortal(false)} />,
+								document.getElementById("modal")
+							)}
+					</>
 				);
 			} else return null;
 		});
