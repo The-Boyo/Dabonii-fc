@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import "./App.css";
@@ -11,11 +11,10 @@ import Players from "./players/Players";
 import Matches from "./matches/Matches";
 import Training from "./training/Training";
 import About from "./about/About";
+import ScrollYProvider from "../contexts/ScrollYContext";
 
 const App = () => {
 	const [theCurrentContentHeight, setCurrentContentHeight] = useState(null);
-
-	console.log(theCurrentContentHeight);
 
 	const setFooterPosition = () => {
 		const containerHeight = document
@@ -50,16 +49,18 @@ const App = () => {
 	return (
 		<div className="container">
 			<BrowserRouter>
-				<Header />
-				<Routes>
-					<Route path={"/"} exact element={<Home />} />
-					<Route path={"/office"} exact element={<Office />} />
-					<Route path={"/players"} exact element={<Players />} />
-					<Route path={"/matches"} exact element={<Matches />} />
-					<Route path={"/training"} exact element={<Training />} />
-					<Route path="/about" exact element={<About />} />
-				</Routes>
-				<Footer />
+				<ScrollYProvider>
+					<Header />
+					<Routes>
+						<Route path={"/"} exact element={<Home />} />
+						<Route path={"/office"} exact element={<Office />} />
+						<Route path={"/players"} exact element={<Players />} />
+						<Route path={"/matches"} exact element={<Matches />} />
+						<Route path={"/training"} exact element={<Training />} />
+						<Route path="/about" exact element={<About />} />
+					</Routes>
+					<Footer />
+				</ScrollYProvider>
 			</BrowserRouter>
 		</div>
 	);
