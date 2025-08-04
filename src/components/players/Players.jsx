@@ -1,19 +1,24 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 import "./Players.css";
 import Defenders from "./Defenders";
 import Midfielders from "./Midfielders";
 import Attackers from "./Attackers";
+import { SetScrollYContext } from "../../contexts/ScrollYContext";
 
 const Players = () => {
 	const [chosenPlayers, setChosenPlayers] = useState("defenders");
 
 	const playersNavRef = useRef();
 
+	const setScrollHeight = useContext(SetScrollYContext);
+
 	useEffect(() => {
 		const handleBodyScroll = () => {
-			console.log("body has scrolled...");
-			console.log(window.scrollY);
+			// console.log("body has scrolled...");
+			// console.log(window.scrollY);
+
+			setScrollHeight(window.scrollY);
 
 			if (window.scrollY > 0) {
 				playersNavRef.current.style.position = "fixed";

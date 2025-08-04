@@ -1,9 +1,13 @@
+#modal {
+	position: relative;
+}
+
 .modal-cont {
-	position: absolute;
+	position: fixed;
 	z-index: 3;
 	background: rgba(0, 0, 0, 0.2);
-	height: 100%;
-	width: 100%;
+	height: 100vh;
+	width: 100vw;
 	display: grid;
 	place-items: center;
 	padding: 2em 0;
@@ -12,7 +16,7 @@
 .theModal {
 	background: white;
 	height: 90%;
-	min-height: 300px;
+	min-height: 350px;
 	width: 70%;
 	min-width: 200px;
 	border-radius: 10px;
