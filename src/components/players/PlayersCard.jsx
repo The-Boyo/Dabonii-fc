@@ -14,12 +14,18 @@ const shortenPositionNames = (pos) => {
 	return pos;
 };
 
+const getImages = () => {
+	return faker.image.personPortrait({ sex: "male" });
+};
+
 const PlayersCard = ({ player }) => {
+	console.log(player);
 	return (
 		<>
 			<img
 				className="dabonii-player-image"
-				src={faker.image.personPortrait({ sex: "male" })}
+				// src={faker.image.personPortrait({ sex: "male" })}
+				src={getImages()}
 				alt={`${player.name}-image`}
 			/>
 			<h3 className="dabonii-player-name">{player.name}</h3>
