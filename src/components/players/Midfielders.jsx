@@ -5,6 +5,8 @@ import { createPortal } from "react-dom";
 import PlayerDetailsModal from "../modal/PlayerDetailsModal";
 import { useScrollYContext } from "../../contexts/ScrollYContext";
 
+const midfielders = getMidfielders();
+
 const Midfielders = () => {
 	const [isPortalOpen, setPortal] = useState(false);
 
@@ -19,8 +21,6 @@ const Midfielders = () => {
 	} else {
 		document.querySelector("body").style.overflowY = "scroll";
 	}
-
-	const midfielders = getMidfielders();
 
 	const handlePlayerListClick = (e) => {
 		console.log(e.target);
