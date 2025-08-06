@@ -14,12 +14,11 @@ const shortenPositionNames = (pos) => {
 	return pos;
 };
 
-const getImages = () => {
+export const getImages = () => {
 	return faker.image.personPortrait({ sex: "male" });
 };
 
 const PlayersCard = ({ player }) => {
-	console.log(player);
 	return (
 		<>
 			<img
