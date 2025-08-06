@@ -13,39 +13,94 @@
 	padding: 2em 0;
 }
 
-.theModal {
+.the-modal {
 	background: white;
 	height: 90%;
-	min-height: 350px;
+	min-height: 500px;
 	max-height: 600px;
 	width: 70%;
 	min-width: 200px;
 	max-width: 600px;
 	border-radius: 10px;
 	display: grid;
-	grid-template-rows: 1fr 7fr 1fr;
-	padding: 0.5em;
+	grid-template-rows: 1fr 1fr 7fr 1fr;
+	padding: 0.3em 0.6em 0.5em;
 }
 
-.theModal > h2 {
+.the-modal > h2 {
 	justify-self: center;
 }
 
-.player-data-personal {
-	padding: 0 1em;
-}
-
-.player-data-personal > img {
+.the-modal > img {
 	height: 100px;
 	width: 100px;
 	border-radius: 50%;
+	margin-bottom: 0.6em;
+	justify-self: center;
+}
+
+.player-data {
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	font-size: 13.5px;
+	justify-items: center;
+	border-radius: 7px;
+	margin-bottom: 0.6em;
+	padding: 0.3em;
+}
+
+.player-data-personal > p,
+.player-data-games > p {
+	margin-bottom: 0.3em;
+	font-weight: 550;
+}
+
+.player-data-games > p > span,
+.player-data-personal > p > span,
+.player-attributes > p > span,
+.player-attributes > h5 > span {
+	opacity: 0.55;
+}
+
+.player-data-personal > p > .player-as-emoji {
+	opacity: 1;
+	font-size: 16px;
+}
+
+.player-data-games {
+	padding-left: 0.2em;
+}
+
+.player-attributes {
+	grid-column: span 2/3;
+	background: var(--the-grey);
+	border-radius: 7px;
+	padding: 0.3em;
+}
+
+.player-attributes > p {
+	margin-bottom: 0.6em;
+	font-weight: 550;
+}
+
+.player-attributes > h5 {
+	margin-bottom: 0.3em;
+}
+
+.player-insights > h4 {
+	text-decoration: underline;
+	margin-bottom: 0.2em;
+}
+
+.player-insights > p {
+	font-size: 12px;
 }
 
 .btn-close {
 	width: 5em;
 	height: 2em;
 	border-radius: 7px;
-	background: blue;
+	background: var(--dabonii-green);
 	color: white;
 	justify-self: end;
 	margin-right: 2em;
