@@ -10,6 +10,8 @@ const midfielders = getMidfielders();
 const Midfielders = () => {
 	const [isPortalOpen, setPortal] = useState(false);
 
+	const [thePlayerName, setPlayerName] = useState("");
+
 	const scrolledHeight = useScrollYContext();
 	console.log(scrolledHeight);
 
@@ -23,7 +25,27 @@ const Midfielders = () => {
 	}
 
 	const handlePlayerListClick = (e) => {
-		console.log(e.target);
+		if (
+			e.target.className.includes("dabonii-player") ||
+			e.target.parentElement.className.includes("dabonii-player") ||
+			e.target.parentElement.parentElement.className.includes("dabonii-player")
+		) {
+			if (e.target.className.includes("dabonii-player"))
+				setPlayerName(e.target.className.split(/[ , -]/)[2]);
+		}
+
+		if (e.target.parentElement.className.includes("dabonii-player")) {
+			setPlayerName(e.target.parentElement.className.split(/[ , -]/)[2]);
+		}
+
+		if (
+			e.target.parentElement.parentElement.className.includes("dabonii-player")
+		) {
+			setPlayerName(
+				e.target.parentElement.parentElement.className.split(/[ , -]/)[2]
+			);
+		}
+
 		setPortal(true);
 	};
 
@@ -40,7 +62,10 @@ const Midfielders = () => {
 						</li>
 						{isPortalOpen &&
 							createPortal(
-								<PlayerDetailsModal onClose={() => setPortal(false)} />,
+								<PlayerDetailsModal
+									playerName={thePlayerName}
+									onClose={() => setPortal(false)}
+								/>,
 								document.getElementById("modal")
 							)}
 					</>
