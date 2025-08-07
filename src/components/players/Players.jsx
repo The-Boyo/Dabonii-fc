@@ -5,15 +5,26 @@ import Defenders from "./Defenders";
 import Midfielders from "./Midfielders";
 import Attackers from "./Attackers";
 import { SetScrollYContext } from "../../contexts/ScrollYContext";
+import { getAllPlayers } from "../../store/fetchData";
+import { useDispatch } from "react-redux";
+import { fetchPlayers } from "../../features/playersSlice/playersSlice";
+
+const allPlayers = getAllPlayers();
+
+console.log(allPlayers);
 
 const Players = () => {
 	const [chosenPlayers, setChosenPlayers] = useState("defenders");
 
 	const playersNavRef = useRef();
-
 	const setScrollHeight = useContext(SetScrollYContext);
 
+	const dispatch = useDispatch();
+
 	useEffect(() => {
+		/*Fetch Players*/
+		dispatch(fetchPlayers());
+
 		const handleBodyScroll = () => {
 			// console.log("body has scrolled...");
 			// console.log(window.scrollY);

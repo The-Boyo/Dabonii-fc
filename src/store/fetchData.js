@@ -1,3 +1,66 @@
+/**Get All Players */
+export const getAllPlayers = () => {
+	return [
+		{
+			defenders: [
+				{
+					goalkeepers: [
+						{
+							name: "Allan Allano",
+							age: 31,
+							position: "Goalkeeper",
+							id: 1,
+							strengths: "Sweeping, Long Passes, Cross-Claiming",
+							personality: "Courageous",
+						},
+					],
+				},
+				{
+					centerBacks: [
+						{
+							name: "Samuel Njoroge",
+							age: 37,
+							position: "CB",
+							id: 1,
+							strengths: "Stamina, Positioning",
+							personality: "Competent",
+						},
+					],
+				},
+			],
+		},
+		{
+			midfielders: [
+				{
+					AttackingMidfielders: [
+						{
+							name: "Kennedy Atendo",
+							age: "31",
+							position: "Attacking Midfielder",
+							id: 1,
+							strengths: "speed, shooting, Dribbling",
+							personality: "joker",
+						},
+					],
+				},
+				{
+					DefensiveMidfielders: [
+						{
+							name: "Ojalo",
+							age: "24",
+							position: "Defensive Midfielder",
+							id: 5,
+							strengths: "Tackling, Passing",
+							personality: "Humble",
+						},
+					],
+				},
+			],
+		},
+	];
+};
+
+/**Get All Data */
 export const getOffice = () => {
 	return [
 		{
