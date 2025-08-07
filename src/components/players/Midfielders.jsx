@@ -4,13 +4,21 @@ import PlayersCard from "./PlayersCard";
 import { createPortal } from "react-dom";
 import PlayerDetailsModal from "../modal/PlayerDetailsModal";
 import { useScrollYContext } from "../../contexts/ScrollYContext";
+import { useSelector } from "react-redux";
 
 const midfielders = getMidfielders();
 
 const Midfielders = () => {
 	const [isPortalOpen, setPortal] = useState(false);
-
 	const [thePlayerName, setPlayerName] = useState("");
+
+	const players = useSelector((state) => state.players.players);
+
+	const theMidfielders = players.find(
+		(el) => Object.keys(el)[0] === "midfielders"
+	);
+
+	console.log(theMidfielders.midfielders);
 
 	const scrolledHeight = useScrollYContext();
 	console.log(scrolledHeight);
@@ -55,6 +63,7 @@ const Midfielders = () => {
 				return (
 					<>
 						<li
+							key={mida.id}
 							onClick={handlePlayerListClick}
 							className={`dabonii-player ${mida.name}-${mida.position}`}
 						>
