@@ -1,5 +1,4 @@
 import { getMidfielders } from "../../store/fetchData";
-import { getImages } from "../players/PlayersCard";
 import "./Modal.css";
 
 const midfielders = getMidfielders();
@@ -9,13 +8,14 @@ const PlayerDetailsModal = ({ onClose, playerName }) => {
 		mid.name.includes(playerName)
 	);
 
-	console.log(theRenderedPlayer);
-
 	return (
 		<div className="modal-cont">
 			<div className="the-modal">
 				<h2>Player Information</h2>
-				<img src={getImages()} alt="" />
+				<img
+					src={`https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/${theRenderedPlayer.id}.jpg`}
+					alt={`${theRenderedPlayer.name}-image`}
+				/>
 				<div className="player-data">
 					<div className="player-data-personal">
 						<p>
@@ -25,7 +25,7 @@ const PlayerDetailsModal = ({ onClose, playerName }) => {
 							Alias: <span>Kento</span>
 						</p>
 						<p>
-							Position: <span>Attacking Midfielder</span>
+							Position: <span>{theRenderedPlayer.position}</span>
 						</p>
 						<p>
 							Height: <span>182cm</span>
