@@ -12,12 +12,44 @@ const shortenPositionNames = (pos) => {
 	return pos;
 };
 
+export const uniqueImageId = (player) => {
+	if (player.position === "CB") {
+		return JSON.parse(player.id) + 20;
+	}
+
+	if (player.position === "RB") {
+		return JSON.parse(player.id) + 30;
+	}
+
+	if (player.position === "LB") {
+		return JSON.parse(player.id) + 30;
+	}
+
+	if (player.position === "Defensive Midfielder") {
+		return JSON.parse(player.id) + 45;
+	}
+
+	if (player.position === "Attacking Midfielder") {
+		return JSON.parse(player.id) + 60;
+	}
+
+	if (player.position === "Striker") {
+		return JSON.parse(player.id) + 77;
+	}
+
+	if (player.position === "CB") {
+		return JSON.parse(player.id) + 90;
+	}
+
+	return player.id;
+};
+
 const PlayersCard = ({ player }) => {
 	return (
 		<>
 			<img
 				className="dabonii-player-image"
-				src={`https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/${player.id}.jpg`}
+				src={`https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/${uniqueImageId(player)}.jpg`}
 				alt={`${player.name}-image`}
 			/>
 			<h3 className="dabonii-player-name">{player.name}</h3>

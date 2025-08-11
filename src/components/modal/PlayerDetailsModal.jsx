@@ -1,4 +1,5 @@
 import { getMidfielders } from "../../store/fetchData";
+import { uniqueImageId } from "../players/PlayersCard";
 import "./Modal.css";
 
 const midfielders = getMidfielders();
@@ -13,7 +14,7 @@ const PlayerDetailsModal = ({ onClose, playerName }) => {
 			<div className="the-modal">
 				<h2>Player Information</h2>
 				<img
-					src={`https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/${theRenderedPlayer.id}.jpg`}
+					src={`https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/${uniqueImageId(theRenderedPlayer)}.jpg`}
 					alt={`${theRenderedPlayer.name}-image`}
 				/>
 				<div className="player-data">
