@@ -18,7 +18,7 @@ const Midfielders = () => {
 		(el) => Object.keys(el)[0] === "midfielders"
 	);
 
-	console.log(theMidfielders.midfielders);
+	console.log(theMidfielders.midfielders[0]);
 
 	const scrolledHeight = useScrollYContext();
 	console.log(scrolledHeight);
