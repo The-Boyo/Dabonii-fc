@@ -1,5 +1,3 @@
-import { faker } from "@faker-js/faker";
-
 const shortenPositionNames = (pos) => {
 	if (pos === "Goalkeeper") return "Goalie";
 
@@ -14,17 +12,12 @@ const shortenPositionNames = (pos) => {
 	return pos;
 };
 
-export const getImages = () => {
-	return faker.image.personPortrait({ sex: "male" });
-};
-
 const PlayersCard = ({ player }) => {
 	return (
 		<>
 			<img
 				className="dabonii-player-image"
-				// src={faker.image.personPortrait({ sex: "male" })}
-				src={getImages()}
+				src={`https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/${player.id}.jpg`}
 				alt={`${player.name}-image`}
 			/>
 			<h3 className="dabonii-player-name">{player.name}</h3>
