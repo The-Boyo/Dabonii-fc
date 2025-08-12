@@ -1,19 +1,28 @@
-import { getAttackers } from "../../store/fetchData";
+import { useSelector } from "react-redux";
+// import { getAttackers } from "../../store/fetchData";
 import PlayersCard from "./PlayersCard";
 
+// const attackers = getAttackers();
+
 const Attackers = () => {
-	const attackers = getAttackers();
+	const { players } = useSelector((state) => state.players);
+
+	const attackers = players.find(
+		(thePlayers) => Object.keys(thePlayers)[0] === "attackers"
+	);
 
 	const renderAttacker = (pos) => {
-		return attackers.map((attacker) => {
-			if (attacker.position.includes(pos)) {
-				return (
-					<li
-						className={`dabonii-player ${attacker.name}-${attacker.position}`}
-					>
-						<PlayersCard player={attacker} />
-					</li>
-				);
+		return attackers.attackers.map((attack) => {
+			if (Object.keys(attack)[0] === pos) {
+				return attack[pos].map((theAttacker) => {
+					return (
+						<li
+							className={`dabonii-player ${theAttacker.name}-${theAttacker.position}`}
+						>
+							<PlayersCard player={theAttacker} />
+						</li>
+					);
+				});
 			} else return null;
 		});
 	};
@@ -24,11 +33,11 @@ const Attackers = () => {
 			<div>
 				<div className="st-cont position-container">
 					<h4>Strikers</h4>
-					<ul>{renderAttacker("Striker")}</ul>
+					<ul>{renderAttacker("strikers")}</ul>
 				</div>
 				<div className="wingers-cont position-container">
 					<h4>Wingers</h4>
-					<ul>{renderAttacker("Winger")}</ul>
+					<ul>{renderAttacker("wingers")}</ul>
 				</div>
 			</div>
 		</div>

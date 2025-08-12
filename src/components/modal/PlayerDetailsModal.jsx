@@ -23,33 +23,36 @@ const PlayerDetailsModal = ({ onClose, playerName }) => {
 							Name: <span>{theRenderedPlayer.name}</span>
 						</p>
 						<p>
-							Alias: <span>Kento</span>
+							Alias: <span>{theRenderedPlayer.alias}</span>
 						</p>
 						<p>
 							Position: <span>{theRenderedPlayer.position}</span>
 						</p>
 						<p>
-							Height: <span>182cm</span>
+							Height: <span>{theRenderedPlayer.height}</span>
 						</p>
 						<p>
-							Strong Foot: <span>Left</span>
+							Strong Foot: <span>{theRenderedPlayer.strongFoot}</span>
 						</p>
 						<p className="player-emoji">
-							Player as Emoji: <span className="player-as-emoji">😁</span>{" "}
+							Player as Emoji:{" "}
+							<span className="player-as-emoji">
+								{theRenderedPlayer.emoji}
+							</span>{" "}
 						</p>
 					</div>
 					<div className="player-data-games">
 						<p>
-							Joined: <span>2016</span>
+							Joined: <span>{theRenderedPlayer.joined}</span>
 						</p>
 						<p>
-							Games Played: <span>30</span>
+							Games Played: <span>{theRenderedPlayer.games}</span>
 						</p>
 						<p>
-							Goals: <span>10</span>
+							Goals: <span>{theRenderedPlayer.goals}</span>
 						</p>
 						<p>
-							Assists <span>5</span>
+							Assists <span>{theRenderedPlayer.assists}</span>
 						</p>
 					</div>
 					<div className="player-attributes">
@@ -57,16 +60,11 @@ const PlayerDetailsModal = ({ onClose, playerName }) => {
 							Strengths: <span>{theRenderedPlayer.strengths}</span>
 						</p>
 						<p>
-							Favourite Move: <span>The Chop</span>
+							Favourite Move: <span>{theRenderedPlayer.favouriteMove}</span>
 						</p>
 						<div className="player-insights">
 							<h4>Player's Insights</h4>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Praesentium numquam eius autem quo corporis architecto minus,
-								error veniam voluptates fugit at provident itaque doloribus
-								illum commodi repellat suscipit. Dolorum, natus.
-							</p>
+							<p>{theRenderedPlayer.playerTake}</p>
 						</div>
 					</div>
 				</div>
