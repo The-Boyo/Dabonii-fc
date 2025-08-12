@@ -10,7 +10,11 @@ import { useSelector } from "react-redux";
 
 const Midfielders = () => {
 	const [isPortalOpen, setPortal] = useState(false);
-	const [thePlayerName, setPlayerName] = useState("");
+	const [thePlayerName, setPlayerName] = useState({
+		name: "",
+		generalPosition: "",
+		specificPosition: "",
+	});
 
 	const players = useSelector((state) => state.players.players);
 
@@ -19,7 +23,7 @@ const Midfielders = () => {
 	);
 
 	const scrolledHeight = useScrollYContext();
-	console.log(scrolledHeight);
+	// console.log(scrolledHeight);
 
 	if (isPortalOpen) {
 		document.querySelector("body").style.overflowY = "hidden";
@@ -30,26 +34,36 @@ const Midfielders = () => {
 		document.querySelector("body").style.overflowY = "scroll";
 	}
 
-	const handlePlayerListClick = (e) => {
+	const handlePlayerListClick = (e, playerPos) => {
 		if (
 			e.target.className.includes("dabonii-player") ||
 			e.target.parentElement.className.includes("dabonii-player") ||
 			e.target.parentElement.parentElement.className.includes("dabonii-player")
 		) {
 			if (e.target.className.includes("dabonii-player"))
-				setPlayerName(e.target.className.split(/[ , -]/)[2]);
+				setPlayerName({
+					name: e.target.className.split(/[ , -]/)[2],
+					generalPosition: "midfielder",
+					specificPosition: playerPos,
+				});
 		}
 
 		if (e.target.parentElement.className.includes("dabonii-player")) {
-			setPlayerName(e.target.parentElement.className.split(/[ , -]/)[2]);
+			setPlayerName({
+				name: e.target.parentElement.className.split(/[ , -]/)[2],
+				generalPosition: "midfielder",
+				specificPosition: playerPos,
+			});
 		}
 
 		if (
 			e.target.parentElement.parentElement.className.includes("dabonii-player")
 		) {
-			setPlayerName(
-				e.target.parentElement.parentElement.className.split(/[ , -]/)[2]
-			);
+			setPlayerName({
+				name: e.target.parentElement.parentElement.className.split(/[ , -]/)[2],
+				generalPosition: "midfielder",
+				specificPosition: playerPos,
+			});
 		}
 
 		setPortal(true);
@@ -63,7 +77,7 @@ const Midfielders = () => {
 						<>
 							<li
 								key={curMida.id}
-								onClick={handlePlayerListClick}
+								onClick={(e) => handlePlayerListClick(e, curMida.position)}
 								className={`dabonii-player ${curMida.name}-${curMida.position}`}
 							>
 								<PlayersCard player={curMida} />
@@ -71,7 +85,7 @@ const Midfielders = () => {
 							{isPortalOpen &&
 								createPortal(
 									<PlayerDetailsModal
-										playerName={thePlayerName}
+										playerData={thePlayerName}
 										onClose={() => setPortal(false)}
 									/>,
 									document.getElementById("modal")
