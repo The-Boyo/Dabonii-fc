@@ -1,13 +1,36 @@
-import { getMidfielders } from "../../store/fetchData";
+import { useSelector } from "react-redux";
+// import { getMidfielders } from "../../store/fetchData";
 import { uniqueImageId } from "../players/PlayersCard";
 import "./Modal.css";
 
-const midfielders = getMidfielders();
+// const midfielders = getMidfielders();
 
-const PlayerDetailsModal = ({ onClose, playerName }) => {
-	const theRenderedPlayer = midfielders.find((mid) =>
-		mid.name.includes(playerName)
-	);
+const PlayerDetailsModal = ({ onClose, playerData }) => {
+	const { players } = useSelector((state) => state.players);
+
+	const alignSpecificPosition = playerData.specificPosition.split(" ").join("");
+
+	const playerToRender = () => {
+		let gottenPlayer;
+
+		players.forEach((player) => {
+			if (Object.keys(player)[0] === `${playerData.generalPosition}s`) {
+				player[`${playerData.generalPosition}s`].forEach((cur) => {
+					if (Object.keys(cur)[0] === `${alignSpecificPosition}s`) {
+						gottenPlayer = cur[`${alignSpecificPosition}s`].find(
+							(curPlayer) => {
+								return curPlayer.name.includes(playerData.name);
+							}
+						);
+					}
+				});
+			}
+		});
+
+		return gottenPlayer;
+	};
+
+	const theRenderedPlayer = playerToRender();
 
 	return (
 		<div className="modal-cont">
