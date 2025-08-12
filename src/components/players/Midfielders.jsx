@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { getMidfielders } from "../../store/fetchData";
+// import { getMidfielders } from "../../store/fetchData";
 import PlayersCard from "./PlayersCard";
 import { createPortal } from "react-dom";
 import PlayerDetailsModal from "../modal/PlayerDetailsModal";
 import { useScrollYContext } from "../../contexts/ScrollYContext";
 import { useSelector } from "react-redux";
 
-const midfielders = getMidfielders();
+// const midfielders = getMidfielders();
 
 const Midfielders = () => {
 	const [isPortalOpen, setPortal] = useState(false);
@@ -17,8 +17,6 @@ const Midfielders = () => {
 	const theMidfielders = players.find(
 		(el) => Object.keys(el)[0] === "midfielders"
 	);
-
-	console.log(theMidfielders.midfielders[0]);
 
 	const scrolledHeight = useScrollYContext();
 	console.log(scrolledHeight);
@@ -58,27 +56,29 @@ const Midfielders = () => {
 	};
 
 	const renderMidfielders = (pos) => {
-		return midfielders.map((mida) => {
-			if (pos === mida.position) {
-				return (
-					<>
-						<li
-							key={mida.id}
-							onClick={handlePlayerListClick}
-							className={`dabonii-player ${mida.name}-${mida.position}`}
-						>
-							<PlayersCard player={mida} />
-						</li>
-						{isPortalOpen &&
-							createPortal(
-								<PlayerDetailsModal
-									playerName={thePlayerName}
-									onClose={() => setPortal(false)}
-								/>,
-								document.getElementById("modal")
-							)}
-					</>
-				);
+		return theMidfielders.midfielders.map((mid) => {
+			if (Object.keys(mid)[0] === pos) {
+				return mid[pos].map((curMida) => {
+					return (
+						<>
+							<li
+								key={curMida.id}
+								onClick={handlePlayerListClick}
+								className={`dabonii-player ${curMida.name}-${curMida.position}`}
+							>
+								<PlayersCard player={curMida} />
+							</li>
+							{isPortalOpen &&
+								createPortal(
+									<PlayerDetailsModal
+										playerName={thePlayerName}
+										onClose={() => setPortal(false)}
+									/>,
+									document.getElementById("modal")
+								)}
+						</>
+					);
+				});
 			} else return null;
 		});
 	};
@@ -89,11 +89,11 @@ const Midfielders = () => {
 			<div>
 				<div className="dm-cont position-container">
 					<h4>Defensive Midfielders</h4>
-					<ul>{renderMidfielders("Defensive Midfielder")}</ul>
+					<ul>{renderMidfielders("DefensiveMidfielders")}</ul>
 				</div>
 				<div className="am-cont position-container">
 					<h4>Attacking Midfielders</h4>
-					<ul>{renderMidfielders("Attacking Midfielder")}</ul>
+					<ul>{renderMidfielders("AttackingMidfielders")}</ul>
 				</div>
 			</div>
 		</div>
