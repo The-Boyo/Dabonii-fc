@@ -1,20 +1,53 @@
-import { useState } from "react";
-// import { getMidfielders } from "../../store/fetchData";
 import PlayersCard from "./PlayersCard";
-import { createPortal } from "react-dom";
 import PlayerDetailsModal from "../modal/PlayerDetailsModal";
-import { useScrollYContext } from "../../contexts/ScrollYContext";
 import { useSelector } from "react-redux";
+import { createPortal } from "react-dom";
+import { useModal } from "../../hooks/useModal";
 
-// const midfielders = getMidfielders();
+export const handlePlayerCardClick = (
+	e,
+	playerPos,
+	generalPosition,
+	setPortal,
+	setPlayerName
+) => {
+	if (
+		e.target.className.includes("dabonii-player") ||
+		e.target.parentElement.className.includes("dabonii-player") ||
+		e.target.parentElement.parentElement.className.includes("dabonii-player")
+	) {
+		if (e.target.className.includes("dabonii-player"))
+			setPlayerName({
+				name: e.target.className.split(/[ , -]/)[2],
+				generalPosition,
+				specificPosition: playerPos,
+			});
+	}
+
+	if (e.target.parentElement.className.includes("dabonii-player")) {
+		setPlayerName({
+			name: e.target.parentElement.className.split(/[ , -]/)[2],
+			generalPosition,
+			specificPosition: playerPos,
+		});
+	}
+
+	if (
+		e.target.parentElement.parentElement.className.includes("dabonii-player")
+	) {
+		setPlayerName({
+			name: e.target.parentElement.parentElement.className.split(/[ , -]/)[2],
+			generalPosition,
+			specificPosition: playerPos,
+		});
+	}
+
+	setPortal(true);
+};
 
 const Midfielders = () => {
-	const [isPortalOpen, setPortal] = useState(false);
-	const [thePlayerName, setPlayerName] = useState({
-		name: "",
-		generalPosition: "",
-		specificPosition: "",
-	});
+	// Custom Hook
+	const [isPortalOpen, setPortal, thePlayerName, setPlayerName] = useModal();
 
 	const players = useSelector((state) => state.players.players);
 
@@ -22,51 +55,14 @@ const Midfielders = () => {
 		(el) => Object.keys(el)[0] === "midfielders"
 	);
 
-	const scrolledHeight = useScrollYContext();
-	// console.log(scrolledHeight);
-
-	if (isPortalOpen) {
-		document.querySelector("body").style.overflowY = "hidden";
-		if (document.querySelector(".modal-cont")) {
-			document.querySelector(".modal-cont").style.top = `${scrolledHeight}px`;
-		}
-	} else {
-		document.querySelector("body").style.overflowY = "scroll";
-	}
-
-	const handlePlayerListClick = (e, playerPos) => {
-		if (
-			e.target.className.includes("dabonii-player") ||
-			e.target.parentElement.className.includes("dabonii-player") ||
-			e.target.parentElement.parentElement.className.includes("dabonii-player")
-		) {
-			if (e.target.className.includes("dabonii-player"))
-				setPlayerName({
-					name: e.target.className.split(/[ , -]/)[2],
-					generalPosition: "midfielder",
-					specificPosition: playerPos,
-				});
-		}
-
-		if (e.target.parentElement.className.includes("dabonii-player")) {
-			setPlayerName({
-				name: e.target.parentElement.className.split(/[ , -]/)[2],
-				generalPosition: "midfielder",
-				specificPosition: playerPos,
-			});
-		}
-
-		if (
-			e.target.parentElement.parentElement.className.includes("dabonii-player")
-		) {
-			setPlayerName({
-				name: e.target.parentElement.parentElement.className.split(/[ , -]/)[2],
-				generalPosition: "midfielder",
-				specificPosition: playerPos,
-			});
-		}
-
-		setPortal(true);
+	const handlePlayerListClick = (e, playerPos, generalPosition) => {
+		handlePlayerCardClick(
+			e,
+			playerPos,
+			generalPosition,
+			setPortal,
+			setPlayerName
+		);
 	};
 
 	const renderMidfielders = (pos) => {
@@ -77,7 +73,9 @@ const Midfielders = () => {
 						<>
 							<li
 								key={curMida.id}
-								onClick={(e) => handlePlayerListClick(e, curMida.position)}
+								onClick={(e) =>
+									handlePlayerListClick(e, curMida.position, "midfielder")
+								}
 								className={`dabonii-player ${curMida.name}-${curMida.position}`}
 							>
 								<PlayersCard player={curMida} />
