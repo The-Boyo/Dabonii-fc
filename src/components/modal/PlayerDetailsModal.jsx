@@ -1,9 +1,6 @@
 import { useSelector } from "react-redux";
-// import { getMidfielders } from "../../store/fetchData";
 import { uniqueImageId } from "../players/PlayersCard";
 import "./Modal.css";
-
-// const midfielders = getMidfielders();
 
 const PlayerDetailsModal = ({ onClose, playerData }) => {
 	const { players } = useSelector((state) => state.players);
