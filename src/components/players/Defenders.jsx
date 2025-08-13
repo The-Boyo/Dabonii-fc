@@ -1,26 +1,57 @@
 import { useSelector } from "react-redux";
 import PlayersCard from "./PlayersCard";
+import { handlePlayerCardClick } from "./Midfielders";
+import { useModal } from "../../hooks/useModal";
+import { createPortal } from "react-dom";
+import PlayerDetailsModal from "../modal/PlayerDetailsModal";
 
 const Defenders = () => {
+	// Custom Hook
+	const [isPortalOpen, setPortal, thePlayerName, setPlayerName] = useModal();
+
 	const { players, status } = useSelector((state) => state.players);
 
 	const defenders = players.find(
 		(thePlayers) => Object.keys(thePlayers)[0] === "defenders"
 	);
 
+	// Handle Player Click
+	const handlePlayerClick = (e, playerPos, generalPosition) => {
+		handlePlayerCardClick(
+			e,
+			playerPos,
+			generalPosition,
+			setPortal,
+			setPlayerName
+		);
+	};
+
 	const renderGoalkeepers = () => {
 		const { goalkeepers } = defenders.defenders.find(
 			(def) => Object.keys(def)[0] === "goalkeepers"
 		);
 
+		console.log(goalkeepers);
+
 		return goalkeepers.map((keeper) => {
 			return (
-				<li
-					key={keeper.id}
-					className={`dabonii-player ${keeper.name.split(" ")[0]}-${keeper.position}`}
-				>
-					<PlayersCard player={keeper} />
-				</li>
+				<>
+					<li
+						onClick={(e) => handlePlayerClick(e, keeper.position, "defender")}
+						key={keeper.id}
+						className={`dabonii-player ${keeper.name.split(" ")[0]}-${keeper.position}`}
+					>
+						<PlayersCard player={keeper} />
+					</li>
+					{isPortalOpen &&
+						createPortal(
+							<PlayerDetailsModal
+								playerData={thePlayerName}
+								onClose={() => setPortal(false)}
+							/>,
+							document.getElementById("modal")
+						)}
+				</>
 			);
 		});
 	};
@@ -33,6 +64,7 @@ const Defenders = () => {
 		return centerBacks.map((cb) => {
 			return (
 				<li
+					onClick={(e) => handlePlayerClick(e, cb.position, "defender")}
 					key={cb.id}
 					className={`dabonii-player ${cb.name.split(" ")[0]}-${cb.position}`}
 				>
@@ -50,6 +82,7 @@ const Defenders = () => {
 		return fullbacks.map((fb) => {
 			return (
 				<li
+					onClick={(e) => handlePlayerClick(e, fb.position, "defender")}
 					key={fb.id}
 					className={`dabonii-player ${fb.name.split(" ")[0]}-${fb.position}`}
 				>
