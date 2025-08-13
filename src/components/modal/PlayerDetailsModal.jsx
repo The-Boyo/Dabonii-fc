@@ -5,7 +5,28 @@ import "./Modal.css";
 const PlayerDetailsModal = ({ onClose, playerData }) => {
 	const { players } = useSelector((state) => state.players);
 
-	const alignSpecificPosition = playerData.specificPosition.split(" ").join("");
+	const alignSpecificPosition = (generalPos) => {
+		if (generalPos === "defenders") {
+			if (playerData.specificPosition === "Goalkeeper") return "goalkeepers";
+
+			if (playerData.specificPosition === "CB") return "centerBacks";
+
+			if (
+				playerData.specificPosition === "RB" ||
+				playerData.specificPosition === "LB"
+			)
+				return "fullbacks";
+		} else if (generalPos === "midfielders") {
+			if (playerData.specificPosition === "Attacking Midfielder")
+				return "AttackingMidfielders";
+
+			if (playerData.specificPosition === "Defensive Midfielder")
+				return "DefensiveMidfielders";
+		} else if (generalPos === "attackers") {
+			if (playerData.specificPosition === "Striker") return "Strikers";
+			if (playerData.specificPosition === "Winger") return "Wingers";
+		}
+	};
 
 	const playerToRender = () => {
 		let gottenPlayer;
@@ -13,12 +34,15 @@ const PlayerDetailsModal = ({ onClose, playerData }) => {
 		players.forEach((player) => {
 			if (Object.keys(player)[0] === `${playerData.generalPosition}s`) {
 				player[`${playerData.generalPosition}s`].forEach((cur) => {
-					if (Object.keys(cur)[0] === `${alignSpecificPosition}s`) {
-						gottenPlayer = cur[`${alignSpecificPosition}s`].find(
-							(curPlayer) => {
-								return curPlayer.name.includes(playerData.name);
-							}
-						);
+					if (
+						Object.keys(cur)[0] ===
+						`${alignSpecificPosition(Object.keys(player)[0])}`
+					) {
+						gottenPlayer = cur[
+							`${alignSpecificPosition(Object.keys(player)[0])}`
+						].find((curPlayer) => {
+							return curPlayer.name.includes(playerData.name);
+						});
 					}
 				});
 			}
@@ -28,6 +52,7 @@ const PlayerDetailsModal = ({ onClose, playerData }) => {
 	};
 
 	const theRenderedPlayer = playerToRender();
+	console.log(theRenderedPlayer);
 
 	return (
 		<div className="modal-cont">
