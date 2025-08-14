@@ -2,8 +2,18 @@ import { useSelector } from "react-redux";
 import PlayersCard from "./PlayersCard";
 import { handlePlayerCardClick } from "./Midfielders";
 import { useModal } from "../../hooks/useModal";
-import { createPortal } from "react-dom";
 import PlayerDetailsModal from "../modal/PlayerDetailsModal";
+
+export const showModal = (name, isPortalOpen, thePlayerName, setPortal) => {
+	if (isPortalOpen && name.split(" ")[0] === thePlayerName.name) {
+		return (
+			<PlayerDetailsModal
+				playerData={thePlayerName}
+				onClose={() => setPortal(false)}
+			/>
+		);
+	}
+};
 
 const Defenders = () => {
 	// Custom Hook
@@ -43,14 +53,7 @@ const Defenders = () => {
 					>
 						<PlayersCard player={keeper} />
 					</li>
-					{isPortalOpen &&
-						createPortal(
-							<PlayerDetailsModal
-								playerData={thePlayerName}
-								onClose={() => setPortal(false)}
-							/>,
-							document.getElementById("modal")
-						)}
+					{showModal(keeper.name, isPortalOpen, thePlayerName, setPortal)}
 				</>
 			);
 		});
@@ -63,13 +66,16 @@ const Defenders = () => {
 
 		return centerBacks.map((cb) => {
 			return (
-				<li
-					onClick={(e) => handlePlayerClick(e, cb.position, "defender")}
-					key={cb.id}
-					className={`dabonii-player ${cb.name.split(" ")[0]}-${cb.position}`}
-				>
-					<PlayersCard player={cb} />
-				</li>
+				<>
+					<li
+						onClick={(e) => handlePlayerClick(e, cb.position, "defender")}
+						key={cb.id}
+						className={`dabonii-player ${cb.name.split(" ")[0]}-${cb.position}`}
+					>
+						<PlayersCard player={cb} />
+					</li>
+					{showModal(cb.name, isPortalOpen, thePlayerName, setPortal)}
+				</>
 			);
 		});
 	};
@@ -81,13 +87,16 @@ const Defenders = () => {
 
 		return fullbacks.map((fb) => {
 			return (
-				<li
-					onClick={(e) => handlePlayerClick(e, fb.position, "defender")}
-					key={fb.id}
-					className={`dabonii-player ${fb.name.split(" ")[0]}-${fb.position}`}
-				>
-					<PlayersCard player={fb} />
-				</li>
+				<>
+					<li
+						onClick={(e) => handlePlayerClick(e, fb.position, "defender")}
+						key={fb.id}
+						className={`dabonii-player ${fb.name.split(" ")[0]}-${fb.position}`}
+					>
+						<PlayersCard player={fb} />
+					</li>
+					{showModal(fb.name, isPortalOpen, thePlayerName, setPortal)}
+				</>
 			);
 		});
 	};
