@@ -24,8 +24,8 @@ const PlayerDetailsModal = ({ onClose, playerData }) => {
 			if (playerData.specificPosition === "Defensive Midfielder")
 				return "DefensiveMidfielders";
 		} else if (generalPos === "attackers") {
-			if (playerData.specificPosition === "Striker") return "Strikers";
-			if (playerData.specificPosition === "Winger") return "Wingers";
+			if (playerData.specificPosition === "Striker") return "strikers";
+			if (playerData.specificPosition.includes("Winger")) return "wingers";
 		}
 	};
 
