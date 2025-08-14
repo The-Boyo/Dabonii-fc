@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { uniqueImageId } from "../players/PlayersCard";
 import "./Modal.css";
+import { createPortal } from "react-dom";
 
 const PlayerDetailsModal = ({ onClose, playerData }) => {
 	const { players } = useSelector((state) => state.players);
@@ -54,7 +55,7 @@ const PlayerDetailsModal = ({ onClose, playerData }) => {
 	const theRenderedPlayer = playerToRender();
 	console.log(theRenderedPlayer);
 
-	return (
+	return createPortal(
 		<div className="modal-cont">
 			<div className="the-modal">
 				<h2>Player Information</h2>
@@ -117,7 +118,8 @@ const PlayerDetailsModal = ({ onClose, playerData }) => {
 					Close
 				</button>
 			</div>
-		</div>
+		</div>,
+		document.querySelector("#modal")
 	);
 };
 

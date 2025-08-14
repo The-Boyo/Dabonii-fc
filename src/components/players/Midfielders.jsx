@@ -1,8 +1,7 @@
 import PlayersCard from "./PlayersCard";
-import PlayerDetailsModal from "../modal/PlayerDetailsModal";
 import { useSelector } from "react-redux";
-import { createPortal } from "react-dom";
 import { useModal } from "../../hooks/useModal";
+import { showModal } from "./Defenders";
 
 export const handlePlayerCardClick = (
 	e,
@@ -80,14 +79,7 @@ const Midfielders = () => {
 							>
 								<PlayersCard player={curMida} />
 							</li>
-							{isPortalOpen &&
-								createPortal(
-									<PlayerDetailsModal
-										playerData={thePlayerName}
-										onClose={() => setPortal(false)}
-									/>,
-									document.getElementById("modal")
-								)}
+							{showModal(curMida.name, isPortalOpen, thePlayerName, setPortal)}
 						</>
 					);
 				});

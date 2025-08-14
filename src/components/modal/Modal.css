@@ -1,11 +1,11 @@
 #modal {
-	position: relative;
+	position: absolute;
 }
 
 .modal-cont {
 	position: fixed;
 	z-index: 3;
-	background: rgba(0, 0, 0, 0.2);
+	background: rgba(0, 0, 0, 0.8);
 	height: 100vh;
 	width: 100vw;
 	display: grid;
