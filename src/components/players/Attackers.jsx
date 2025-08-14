@@ -1,26 +1,50 @@
 import { useSelector } from "react-redux";
-// import { getAttackers } from "../../store/fetchData";
 import PlayersCard from "./PlayersCard";
-
-// const attackers = getAttackers();
+import { handlePlayerCardClick } from "./Midfielders";
+import { useModal } from "../../hooks/useModal";
+import { showModal } from "./Defenders";
 
 const Attackers = () => {
+	// Custom Hook
+	const [isPortalOpen, setPortal, thePlayerName, setPlayerName] = useModal();
+
 	const { players } = useSelector((state) => state.players);
 
 	const attackers = players.find(
 		(thePlayers) => Object.keys(thePlayers)[0] === "attackers"
 	);
 
+	const handleAttackerClick = (e, playerPos, generalPosition) => {
+		handlePlayerCardClick(
+			e,
+			playerPos,
+			generalPosition,
+			setPortal,
+			setPlayerName
+		);
+	};
+
 	const renderAttacker = (pos) => {
 		return attackers.attackers.map((attack) => {
 			if (Object.keys(attack)[0] === pos) {
 				return attack[pos].map((theAttacker) => {
 					return (
-						<li
-							className={`dabonii-player ${theAttacker.name}-${theAttacker.position}`}
-						>
-							<PlayersCard player={theAttacker} />
-						</li>
+						<>
+							<li
+								onClick={(e) =>
+									handleAttackerClick(e, theAttacker.position, "attacker")
+								}
+								className={`dabonii-player ${theAttacker.name}-${theAttacker.position}`}
+							>
+								<PlayersCard player={theAttacker} />
+							</li>
+							{showModal(
+								theAttacker.name,
+								isPortalOpen,
+								thePlayerName,
+								setPortal
+							)}
+						</>
 					);
 				});
 			} else return null;

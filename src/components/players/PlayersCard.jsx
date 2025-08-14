@@ -37,8 +37,8 @@ export const uniqueImageId = (player) => {
 		return JSON.parse(player.id) + 77;
 	}
 
-	if (player.position === "CB") {
-		return JSON.parse(player.id) + 90;
+	if (player.position === "Left Winger" || player.position === "Right Winger") {
+		return JSON.parse(player.id) + 85;
 	}
 
 	return player.id;
