@@ -5,13 +5,8 @@ import Defenders from "./Defenders";
 import Midfielders from "./Midfielders";
 import Attackers from "./Attackers";
 import { SetScrollYContext } from "../../contexts/ScrollYContext";
-import { getAllPlayers } from "../../store/fetchData";
 import { useDispatch } from "react-redux";
 import { fetchPlayers } from "../../features/playersSlice/playersSlice";
-
-const allPlayers = getAllPlayers();
-
-console.log(allPlayers);
 
 const Players = () => {
 	const [chosenPlayers, setChosenPlayers] = useState("defenders");

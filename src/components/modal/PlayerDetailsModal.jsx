@@ -53,7 +53,6 @@ const PlayerDetailsModal = ({ onClose, playerData }) => {
 	};
 
 	const theRenderedPlayer = playerToRender();
-	console.log(theRenderedPlayer);
 
 	return createPortal(
 		<div className="modal-cont">
