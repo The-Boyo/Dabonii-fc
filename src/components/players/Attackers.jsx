@@ -3,6 +3,7 @@ import PlayersCard from "./PlayersCard";
 import { handlePlayerCardClick } from "./Midfielders";
 import { useModal } from "../../hooks/useModal";
 import { showModal } from "./Defenders";
+import { Fragment } from "react/jsx-runtime";
 
 const Attackers = () => {
 	// Custom Hook
@@ -29,7 +30,7 @@ const Attackers = () => {
 			if (Object.keys(attack)[0] === pos) {
 				return attack[pos].map((theAttacker) => {
 					return (
-						<>
+						<Fragment key={`${theAttacker.name}-${theAttacker.id}`}>
 							<li
 								onClick={(e) =>
 									handleAttackerClick(e, theAttacker.position, "attacker")
@@ -44,7 +45,7 @@ const Attackers = () => {
 								thePlayerName,
 								setPortal
 							)}
-						</>
+						</Fragment>
 					);
 				});
 			} else return null;

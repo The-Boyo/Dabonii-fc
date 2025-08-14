@@ -3,6 +3,7 @@ import PlayersCard from "./PlayersCard";
 import { handlePlayerCardClick } from "./Midfielders";
 import { useModal } from "../../hooks/useModal";
 import PlayerDetailsModal from "../modal/PlayerDetailsModal";
+import { Fragment } from "react/jsx-runtime";
 
 export const showModal = (name, isPortalOpen, thePlayerName, setPortal) => {
 	if (isPortalOpen && name.split(" ")[0] === thePlayerName.name) {
@@ -41,20 +42,18 @@ const Defenders = () => {
 			(def) => Object.keys(def)[0] === "goalkeepers"
 		);
 
-		console.log(goalkeepers);
-
 		return goalkeepers.map((keeper) => {
 			return (
-				<>
+				<Fragment key={`${keeper.name}-${keeper.id}`}>
 					<li
 						onClick={(e) => handlePlayerClick(e, keeper.position, "defender")}
-						key={keeper.id}
+						key={`${keeper.name}-${keeper.id}`}
 						className={`dabonii-player ${keeper.name.split(" ")[0]}-${keeper.position}`}
 					>
 						<PlayersCard player={keeper} />
 					</li>
 					{showModal(keeper.name, isPortalOpen, thePlayerName, setPortal)}
-				</>
+				</Fragment>
 			);
 		});
 	};
@@ -66,16 +65,16 @@ const Defenders = () => {
 
 		return centerBacks.map((cb) => {
 			return (
-				<>
+				<Fragment key={`${cb.name}-${cb.id}`}>
 					<li
 						onClick={(e) => handlePlayerClick(e, cb.position, "defender")}
-						key={cb.id}
+						key={`${cb.name}-${cb.id}`}
 						className={`dabonii-player ${cb.name.split(" ")[0]}-${cb.position}`}
 					>
 						<PlayersCard player={cb} />
 					</li>
 					{showModal(cb.name, isPortalOpen, thePlayerName, setPortal)}
-				</>
+				</Fragment>
 			);
 		});
 	};
@@ -87,16 +86,15 @@ const Defenders = () => {
 
 		return fullbacks.map((fb) => {
 			return (
-				<>
+				<Fragment key={`${fb.name}-${fb.id}`}>
 					<li
 						onClick={(e) => handlePlayerClick(e, fb.position, "defender")}
-						key={fb.id}
 						className={`dabonii-player ${fb.name.split(" ")[0]}-${fb.position}`}
 					>
 						<PlayersCard player={fb} />
 					</li>
 					{showModal(fb.name, isPortalOpen, thePlayerName, setPortal)}
-				</>
+				</Fragment>
 			);
 		});
 	};

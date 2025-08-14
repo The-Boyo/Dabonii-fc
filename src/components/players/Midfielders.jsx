@@ -2,6 +2,7 @@ import PlayersCard from "./PlayersCard";
 import { useSelector } from "react-redux";
 import { useModal } from "../../hooks/useModal";
 import { showModal } from "./Defenders";
+import { Fragment } from "react/jsx-runtime";
 
 export const handlePlayerCardClick = (
 	e,
@@ -69,9 +70,8 @@ const Midfielders = () => {
 			if (Object.keys(mid)[0] === pos) {
 				return mid[pos].map((curMida) => {
 					return (
-						<>
+						<Fragment key={`${curMida.name}-${curMida.id}`}>
 							<li
-								key={curMida.id}
 								onClick={(e) =>
 									handlePlayerListClick(e, curMida.position, "midfielder")
 								}
@@ -80,7 +80,7 @@ const Midfielders = () => {
 								<PlayersCard player={curMida} />
 							</li>
 							{showModal(curMida.name, isPortalOpen, thePlayerName, setPortal)}
-						</>
+						</Fragment>
 					);
 				});
 			} else return null;
