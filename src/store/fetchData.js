@@ -694,7 +694,7 @@ export const getAllPlayers = () => {
 	];
 };
 
-/**Get All Data */
+/**Get Office Data */
 export const getOffice = () => {
 	return [
 		{
@@ -723,458 +723,102 @@ export const getOffice = () => {
 			name: "Tom Muriuki",
 			position: "Treasurer",
 			photo: "photo-treasurer",
-			helper: [
-				{
-					id: 4.1,
-
-					name: "Eshbon Ngotho",
-					position: "Assistant Treasurer",
-					photo: "photo-treasurer",
-				},
-			],
 		},
 		{
 			id: 5,
-
-			name: "Walter Masinde",
-			position: "Organising Secretary",
-			photo: "photo-organising-secretary",
-			helper: [
-				{
-					id: 5.1,
-
-					name: "Kennedy Atendo",
-					position: "Assistant Organising Secretary",
-					photo: "photo-asst-org-1",
-				},
-				{
-					id: 5.2,
-
-					name: "Anderson Ajore",
-					position: "Assistant Organising Secretary",
-					photo: "photo-asst-org-2",
-				},
-			],
+			name: "Eshbon Ngotho",
+			position: "Assistant Treasurer",
+			photo: "photo-treasurer",
 		},
 		{
 			id: 6,
 
-			name: "Brian Nyamairi",
-			position: "Secretary",
-			photo: "photo-secretary",
-			helper: [
-				{
-					id: 6.1,
-
-					name: "Dennis Andale",
-					position: "Assistant Secretary",
-					photo: "photo-secretary",
-				},
-			],
+			name: "Walter Masinde",
+			position: "Organising Secretary",
+			photo: "photo-organising-secretary",
 		},
 		{
 			id: 7,
+
+			name: "Kennedy Atendo",
+			position: "Assistant Organising Secretary",
+			photo: "photo-asst-org-1",
+		},
+		{
+			id: 9,
+
+			name: "Brian Nyamairi",
+			position: "Secretary",
+			photo: "photo-secretary",
+		},
+		{
+			id: 10,
+
+			name: "Dennis Andale",
+			position: "Assistant Secretary",
+			photo: "photo-secretary",
+		},
+		{
+			id: 11,
 
 			name: "Fredrick Mogaka",
 			position: "Team Manager",
 			photo: "photo-team-manager",
 		},
 		{
-			honourableMembers: [
+			members: [
 				{
-					id: 8,
-
+					id: 12,
 					name: "Samuel Njoroge",
 					position: "Member",
 					photo: "photo-member-1",
 				},
 				{
-					id: 9,
+					id: 13,
 
 					name: "Eric Karin",
 					position: "Member",
 					photo: "photo-member-2",
 				},
 				{
-					id: 10,
-
+					id: 14,
 					name: "Kevin Wambugu",
 					position: "Member",
 					photo: "photo-member-3",
 				},
 				{
-					id: 11,
-
+					id: 15,
 					name: "Joseph Ngina",
 					position: "Member",
 					photo: "photo-member-4",
 				},
 				{
-					id: 12,
-
+					id: 16,
 					name: "Martin Mbaya",
 					position: "Member",
 					photo: "photo-member-5",
 				},
 			],
 		},
-	];
-};
-
-/**DEFENDERS DATA */
-export const getCenterBacks = () => {
-	return [
 		{
-			name: "Samuel Njoroge",
-			age: 37,
-			position: "CB",
-			id: 1,
-			strengths: "Stamina, Positioning",
-			personality: "Competent",
-		},
-		{
-			name: "Elijah Owino",
-			age: 29,
-			position: "CB",
-			id: 2,
-			strengths: "Passing, First-Touch",
-			personality: "Brave",
-		},
-		{
-			name: "Eutychus",
-			age: 20,
-			position: "CB",
-			id: 3,
-			strengths: "Stamina, Pace",
-			personality: "Competent",
-		},
-		{
-			name: "Alex Mwangi",
-			age: 34,
-			position: "CB",
-			id: 4,
-			strengths: "Tackling,Strength",
-			personality: "Brave",
-		},
-		{
-			name: "Joseph Ngina",
-			age: 39,
-			position: "CB",
-			id: 5,
-			strengths: "Hard-Tackler, Passing",
-			personality: "Honest",
-		},
-		{
-			name: "Lwanga Viketi",
-			age: 43,
-			position: "CB",
-			id: 6,
-			strengths: "Tackling, Stamina",
-			personality: "Competent",
-		},
-		{
-			name: "Robert Sifuma",
-			age: 40,
-			position: "CB",
-			id: 7,
-			strengths: "Shooting,",
-			personality: "Joker",
-		},
-		{
-			name: "Idris",
-			age: 31,
-			position: "CB",
-			id: 8,
-			strengths: "Stamina, Pace, Power",
-			personality: "Competent",
-		},
-	];
-};
-
-export const getFullbacks = () => {
-	return [
-		{
-			name: "Joshua Junior",
-			age: "28",
-			position: "RB",
-			id: 1,
-			strengths: "Stamina, Pace",
-			personality: "Competent",
-		},
-		{
-			name: "Omanyala Oma",
-			age: "23",
-			position: "RB",
-			id: 2,
-			strengths: "Tackling, Speed",
-			personality: "Brave",
-		},
-		{
-			name: "Eshbon Moha",
-			age: "35",
-			position: "LB",
-			id: 3,
-			strengths: "Touch, Short Passes",
-			personality: "Outgoing",
-		},
-		{
-			name: "Martin Mbaya",
-			age: "38",
-			position: "RB",
-			id: 4,
-			strengths: "Dribbling, Long Passes",
-			personality: "Humble",
-		},
-		{
-			name: "Dan Lumiti",
-			age: "31",
-			position: "RB",
-			id: 5,
-			strengths: "Stamina, Pace",
-			personality: "Brave",
-		},
-		{
-			name: "Chris Jadolo",
-			age: "40",
-			position: "RB",
-			id: 6,
-			strengths: "Positioning, Man-marking",
-			personality: "Compassionate",
-		},
-		{
-			name: "Clinton Bukele",
-			age: "26",
-			position: "LB",
-			id: 7,
-			strengths: "Tackling, Passing",
-			personality: "Competent",
-		},
-		{
-			name: "Mugesto",
-			age: "25",
-			position: "RB",
-			id: 8,
-			strengths: "Passing, Vision",
-			personality: "Brave",
-		},
-		{
-			name: "Kasee",
-			age: "36",
-			position: "RB",
-			id: 9,
-			strengths: "Stamina, Pace",
-			personality: "Competent",
-		},
-		{
-			name: "Rutto",
-			age: "42",
-			position: "RB",
-			id: 10,
-			strengths: "Tenacious, Tackling",
-			personality: "Brave",
-		},
-	];
-};
-
-// export const getGoalkeepers = () => {
-// 	return [
-// 		{
-// 			name: "Allan Allano",
-// 			age: 31,
-// 			position: "Goalkeeper",
-// 			id: 1,
-// 			strengths: "Sweeping, Long Passes, Cross-Claiming",
-// 			personality: "Courageous",
-// 		},
-// 		{
-// 			name: "Collins Collo",
-// 			age: 17,
-// 			position: "Goalkeeper",
-// 			id: 2,
-// 			strengths: "Cross-Claiming, Sweeper",
-// 			personality: "Courageous",
-// 		},
-// 		{
-// 			name: "Jagoal",
-// 			age: 23,
-// 			position: "Goalkeeper",
-// 			id: 3,
-// 			strengths: "Shot-Stopper",
-// 			personality: "Humble",
-// 		},
-// 	];
-// };
-
-/**MIDFIELERS DATA */
-
-export const getMidfielders = () => {
-	return [
-		{
-			name: "Kennedy Atendo",
-			age: "31",
-			position: "Attacking Midfielder",
-			id: 1,
-			strengths: "speed, shooting, Dribbling",
-			personality: "joker",
-		},
-		{
-			name: "Pepe",
-			age: "35",
-			position: "Attacking Midfielder",
-			id: 2,
-			strengths: "Passing, shooting, Dribbling",
-			personality: "Competent",
-		},
-		{
+			id: 17,
 			name: "Constant Mulah",
-			age: "34",
-			position: "Defensive Midfielder",
-			id: 3,
-			strengths: "Tough, Stamina",
-			personality: "Tenacious",
+			position: "Head Coach",
 		},
 		{
-			name: "Eliud",
-			age: "30",
-			position: "Attacking Midfielder",
-			id: 4,
-			strengths: "Vision, Passing, Dribbling",
-			personality: "Compassionate",
+			id: 18,
+			name: "Martin Mbaite",
+			position: "Discipline Master",
 		},
 		{
-			name: "Ojalo",
-			age: "24",
-			position: "Defensive Midfielder",
-			id: 5,
-			strengths: "Tackling, Passing",
-			personality: "Humble",
+			id: 19,
+			name: "Samuel Njoroge",
+			position: "Fitness Coach",
 		},
 		{
-			name: "Cecil",
-			age: "24",
-			position: "Attacking Midfielder",
-			id: 6,
-			strengths: "Speed, Passing, Dribbling",
-			personality: "Outgoing",
-		},
-		{
-			name: "Kibe",
-			age: "32",
-			position: "Defensive Midfielder",
-			id: 7,
-			strengths: "Stamina, Shooting, Dribbling",
-			personality: "Courageous",
-		},
-		{
-			name: "Eric Muiruri",
-			age: "23",
-			position: "Attacking Midfielder",
-			id: 8,
-			strengths: "Shooting, Dribbling, Passing",
-			personality: "Competent",
-		},
-		{
-			name: "Castro Opiyo",
-			age: "33",
-			position: "Defensive Midfielder",
-			id: 9,
-			strengths: "Passing, Vision, Strength",
-			personality: "Compassionate",
-		},
-	];
-};
-
-/** ATTACKERS DATA */
-
-export const getAttackers = () => {
-	return [
-		{
-			name: "Walter Masinde",
-			age: "42",
-			position: "Striker",
-			id: 1,
-			strengths: "Eye-for-goal, Strength, Finishing",
-			personality: "Easy-going",
-		},
-		{
-			name: "Mzee Bonnie",
-			age: "58",
-			position: "Striker",
-			id: 2,
-			strengths: "First Touch, Dribbling, Passing",
-			personality: "Compassion",
-		},
-		{
-			name: "Tom Muriuki",
-			age: "36",
-			position: "Striker",
-			id: 3,
-			strengths: "Very Agile, Eye-for-goal",
-			personality: "Friendly",
-		},
-		{
-			name: "Anderson Ajore",
-			age: "40",
-			position: "Right Winger",
-			id: 4,
-			strengths: "Shooting, Dribbling",
-			personality: "Competent",
-		},
-		{
-			name: "Eliud Oboya",
-			age: "32",
-			position: "Striker",
-			id: 5,
-			strengths: "Dribbling, Passing, Strength",
-			personality: "Outgoing",
-		},
-		{
-			name: "Brian Nyamairi",
-			age: "23",
-			position: "Left Winger",
-			id: 6,
-			strengths: "Speed, Positioning",
-			personality: "Competent",
-		},
-		{
-			name: "Bubbah",
-			age: "24",
-			position: "Left Winger",
-			id: 7,
-			strengths: "Dribbling, Passing",
-			personality: "Brave",
-		},
-		{
-			name: "Kip Argut",
-			age: "26",
-			position: "Right Winger",
-			id: 8,
-			strengths: "Speed, Dribbling",
-			personality: "Friendly",
-		},
-		{
-			name: "Olise",
-			age: "23",
-			position: "Right Winger",
-			id: 9,
-			strengths: "Shooting, Dribbling, First-Touch",
-			personality: "Competent",
-		},
-		{
-			name: "Brayo Lefty",
-			age: "25",
-			position: "Right Winger",
-			id: 10,
-			strengths: "Shooting, Dribbling, Tackling",
-			personality: "Brave",
-		},
-		{
-			name: "Peter",
-			age: "35",
-			position: "Left Winger",
-			id: 11,
-			strengths: "Pace, Stamina, Finishing",
-			personality: "Courageous",
+			id: 20,
+			name: "Nick M",
+			position: "Kit Manager",
 		},
 	];
 };
