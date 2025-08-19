@@ -51,6 +51,8 @@ const Office = () => {
 	const renderTheOffice = () => {
 		return (
 			<>
+				<div className={`holder patron`}>{toBeRendered("Patron")}</div>
+				<div className="line"></div>
 				<div className={`holder chairman`}>{toBeRendered("Chairman")}</div>
 				<div className="line"></div>
 				<div className="holder vice-chairman">
@@ -89,6 +91,7 @@ const Office = () => {
 						{toBeRendered("Kit Manager")}
 					</div>
 				</div>
+				<div className="line"></div>
 				<div className="honourable-members">{toBeRendered("members")}</div>
 			</>
 		);
