@@ -56,7 +56,8 @@
 
 .sec-tresh,
 .assist-sec-tresh,
-.other-holders {
+.other-holders,
+.honourable-members {
 	background: rgb(247, 244, 244);
 	width: 100%;
 	padding: 1em;
@@ -67,45 +68,36 @@
 .sec-tresh,
 .assist-sec-tresh {
 	grid-template-columns: repeat(3, 4fr);
+	row-gap: 1.5em;
 }
 
 .assist-sec-tresh {
 	padding-top: 3em;
 }
 
-.other-holders-cont {
-	position: relative;
-	width: 100%;
-	height: 250px;
+.other-holders,
+.honourable-members {
+	grid-template-columns: repeat(5, 3fr);
+	gap: 1em;
 }
 
 .other-holders {
-	grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
-	gap: 1em;
 	padding-top: 2em;
 	background: none;
 }
 
-.other-holders,
-.honourable-members {
-	display: grid;
-}
-
-.honourable-members {
-	grid-template-columns: repeat(auto-fill, minmax(200px, 3fr));
-	gap: 1em;
-}
-
-@media screen and (max-width: 1378px) {
-	.other-holders {
-		overflow-x: scroll;
-		scroll-behavior: smooth;
-		position: absolute;
-		width: 100%;
+@media screen and (max-width: 900px) {
+	.other-holders,
+	.honourable-members {
+		grid-template-columns: repeat(3, 3fr);
 	}
+}
 
+@media screen and (max-width: 560px) {
 	.sec-tresh,
-	.assist-sec-tresh {
-		overflow-x: hidden;
+	.assist-sec-tresh,
+	.other-holders,
+	.honourable-members {
+		grid-template-columns: repeat(2, 3fr);
 	}
 }

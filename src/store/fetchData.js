@@ -769,7 +769,7 @@ export const getOffice = () => {
 			members: [
 				{
 					id: 12,
-					name: "Samuel Njoroge",
+					name: "Chris Jadolo",
 					position: "Member",
 					photo: "photo-member-1",
 				},
