@@ -73,21 +73,17 @@ const Office = () => {
 						{toBeRendered("Assistant Secretary")}
 					</div>
 				</div>
-				<div className="other-holders-cont">
-					<div className="other-holders">
-						<div className="holder team-manager">
-							{toBeRendered("Team Manager")}
-						</div>
-						<div className="holder coach">{toBeRendered("Head Coach")}</div>
-						<div className="holder discipline-master">
-							{toBeRendered("Discipline Master")}
-						</div>
-						<div className="holder fitness">
-							{toBeRendered("Fitness Coach")}
-						</div>
-						<div className="holder kit-manager">
-							{toBeRendered("Kit Manager")}
-						</div>
+				<div className="other-holders">
+					<div className="holder team-manager">
+						{toBeRendered("Team Manager")}
+					</div>
+					<div className="holder coach">{toBeRendered("Head Coach")}</div>
+					<div className="holder discipline-master">
+						{toBeRendered("Discipline Master")}
+					</div>
+					<div className="holder fitness">{toBeRendered("Fitness Coach")}</div>
+					<div className="holder kit-manager">
+						{toBeRendered("Kit Manager")}
 					</div>
 				</div>
 				<div className="honourable-members">{toBeRendered("members")}</div>
