@@ -52,9 +52,11 @@ const Office = () => {
 		return (
 			<>
 				<div className={`holder chairman`}>{toBeRendered("Chairman")}</div>
+				<div className="line"></div>
 				<div className="holder vice-chairman">
 					{toBeRendered("Vice Chairman")}
 				</div>
+				<div className="line"></div>
 				<div className="sec-tresh">
 					<div className="holder treasurer">{toBeRendered("Treasurer")}</div>
 					<div className="holder organising-secretary">
@@ -73,6 +75,7 @@ const Office = () => {
 						{toBeRendered("Assistant Secretary")}
 					</div>
 				</div>
+				<div className="line"></div>
 				<div className="other-holders">
 					<div className="holder team-manager">
 						{toBeRendered("Team Manager")}
