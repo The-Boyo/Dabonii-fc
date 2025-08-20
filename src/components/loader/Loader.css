@@ -1,0 +1,13 @@
+.loading-spinner {
+	animation: spin 1.5s infinite linear;
+}
+
+@keyframes spin {
+	0% {
+		rotate: 0;
+	}
+
+	100% {
+		rotate: 360deg;
+	}
+}

@@ -115,3 +115,12 @@
 		grid-template-columns: repeat(2, 3fr);
 	}
 }
+
+@media screen and (max-width: 250px) {
+	.sec-tresh,
+	.assist-sec-tresh,
+	.other-holders,
+	.honourable-members {
+		grid-template-columns: repeat(1, 3fr);
+	}
+}
