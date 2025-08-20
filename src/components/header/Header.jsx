@@ -49,7 +49,6 @@ const Header = () => {
 	}, [headerWidth]);
 
 	const handleOpenCloseClick = () => {
-		console.log(navbarState);
 		if (navbarState) {
 			navRef.current.style.display = "none";
 			setNavBar(false);
@@ -59,45 +58,52 @@ const Header = () => {
 		}
 	};
 
+	const handleLinkClick = () => {
+		if (headerWidth < 700) {
+			navRef.current.style.display = "none";
+			setNavBar(false);
+		}
+	};
+
 	const renderNavbar = () => {
 		return (
 			<div className="nav-bar" ref={navRef}>
-				<Link to={"/"}>
+				<Link to={"/"} onClick={() => handleLinkClick()}>
 					<h3
 						className={`nav_elem nav_fans ${location.pathname === "/" ? "active_nav-bar" : ""}`}
 					>
 						Home
 					</h3>
 				</Link>
-				<Link to={"/office"}>
+				<Link to={"/office"} onClick={() => handleLinkClick()}>
 					<h3
 						className={`nav_elem nav_office ${location.pathname.includes("office") ? "active_nav-bar" : ""}`}
 					>
 						Office
 					</h3>
 				</Link>
-				<Link to={"/players"}>
+				<Link to={"/players"} onClick={() => handleLinkClick()}>
 					<h3
 						className={`nav_elem nav_players ${location.pathname.includes("players") ? "active_nav-bar" : ""} `}
 					>
 						Players
 					</h3>
 				</Link>
-				<Link to={"/matches"}>
+				<Link to={"/matches"} onClick={() => handleLinkClick()}>
 					<h3
 						className={`nav_elem nav_matches ${location.pathname.includes("matches") ? "active_nav-bar" : ""}`}
 					>
 						Matches
 					</h3>
 				</Link>
-				<Link to={"/training"}>
+				<Link to={"/training"} onClick={() => handleLinkClick()}>
 					<h3
 						className={`nav_elem nav_training ${location.pathname.includes("training") ? "active_nav-bar" : ""}`}
 					>
 						Training
 					</h3>
 				</Link>
-				<Link to={`/about`}>
+				<Link to={`/about`} onClick={() => handleLinkClick()}>
 					<h3
 						className={`nav_elem nav_training ${location.pathname.includes("about") ? "active_nav-bar" : ""}`}
 					>

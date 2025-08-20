@@ -16,6 +16,8 @@ import ScrollYProvider from "../contexts/ScrollYContext";
 const App = () => {
 	const [theCurrentContentHeight, setCurrentContentHeight] = useState(null);
 
+	console.log(theCurrentContentHeight);
+
 	const setFooterPosition = () => {
 		const containerHeight = document
 			.querySelector(".container")
