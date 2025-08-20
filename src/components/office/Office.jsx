@@ -1,23 +1,16 @@
+import { Fragment } from "react";
 import { faker } from "@faker-js/faker";
 
 import { getOffice } from "../../store/fetchData";
 import "./Office.css";
-import { Fragment, useEffect } from "react";
 
 const offe = getOffice();
 
 const Office = () => {
-	useEffect(() => {
-		console.log(document.querySelector(".content"));
-	});
-
-	console.log(offe);
-
 	const toBeRendered = (pos) => {
 		return offe.map((office) => {
 			if (Array.isArray(office["members"]) && pos === "members") {
 				return office["members"].map((cur) => {
-					console.log(cur);
 					return (
 						<div className={`holder ${cur.position}`} key={cur.id}>
 							<img

@@ -105,7 +105,7 @@ const Defenders = () => {
 			<div>
 				<div className="goalkeepers-cont position-container">
 					<h4>GoalKeepers</h4>
-					<ul>
+					<ul style={{ position: "relative" }}>
 						{status === "idle" ? (
 							<p>Loading Goalkeepers...</p>
 						) : (
