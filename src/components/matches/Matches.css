@@ -1,0 +1,59 @@
+.matches {
+	display: grid;
+	grid-template-columns: 8fr 3fr;
+	padding: 0.3em;
+}
+
+.match-list {
+	display: grid;
+	padding: 0 0.5em;
+}
+
+.next-match,
+.last-match,
+.biggest-win,
+.biggest-loss {
+	margin-bottom: 1em;
+	background: var(--the-grey);
+	border-radius: 10px;
+	padding: 0.4em;
+}
+
+.match-list > div > h2 {
+	justify-self: center;
+}
+
+.match-details {
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+}
+
+.match-details > h4 {
+	margin: 0.3em 0;
+	opacity: 0.6;
+}
+
+.match-type,
+.match-venue,
+.match-date,
+.match-time {
+	font-size: 14px;
+	margin: 0.3em 0;
+}
+
+.match-type,
+.match-venue,
+.match-teams {
+	grid-column: span 2;
+	justify-self: center;
+}
+
+.match-teams {
+	font-weight: 550;
+	font-size: 18px;
+}
+
+.match-date,
+.match-time {
+	justify-self: center;
+}
