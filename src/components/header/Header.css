@@ -4,7 +4,7 @@
 	height: 100px;
 	grid-gap: 1em;
 	padding: 0.3em;
-	background: var(--dabonii-green);
+	background: var(--linear-dabonii-green);
 	border-bottom: 1px dashed;
 	/* position: fixed; */
 	width: 100%;
@@ -124,7 +124,7 @@
 		height: 350px;
 		min-height: 300px;
 		border-radius: 0;
-		background: var(--dabonii-green);
+		background: var(--linear-dabonii-green);
 		box-shadow: none;
 		display: none;
 		grid-template-columns: 3fr;
