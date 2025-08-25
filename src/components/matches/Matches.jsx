@@ -43,6 +43,9 @@ const Matches = () => {
 				<h2>Next Match</h2>
 				{renderMatchDetails("next")}
 			</div>
+			<div className="match-schedule">
+				<h2>Upcoming Matches</h2>
+			</div>
 			<div className="match-list">
 				<div className="last-match">
 					<h2>Last Match</h2>
@@ -56,9 +59,6 @@ const Matches = () => {
 					<h2>Biggest Loss</h2>
 					{renderMatchDetails("loss")}
 				</div>
-			</div>
-			<div className="match-schedule">
-				<h2>Upcoming Matches</h2>
 			</div>
 		</section>
 	);
