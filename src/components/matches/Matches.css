@@ -1,22 +1,51 @@
 .matches {
 	display: grid;
-	grid-template-columns: 8fr 3fr;
+	grid-template-columns: 8fr 4fr;
 	padding: 0.3em;
+	gap: 1em;
+}
+
+.next-match {
+	grid-column: span 2;
+	height: 200px;
+}
+
+.next-match:hover {
+	background: var(--linear-dabonii-green);
+}
+
+.next-match > h2 {
+	justify-self: center;
+}
+
+.next-match > .match-details > .match-teams {
+	font-size: 24px;
+}
+
+.match-list,
+.match-schedule {
+	background: var(--the-grey);
+	border-radius: 10px;
+	padding: 0.5em;
 }
 
 .match-list {
 	display: grid;
-	padding: 0 0.5em;
 }
 
 .next-match,
 .last-match,
 .biggest-win,
 .biggest-loss {
-	margin-bottom: 1em;
-	background: var(--the-grey);
+	margin-bottom: 0.4em;
 	border-radius: 10px;
 	padding: 0.4em;
+}
+
+.last-match,
+.biggest-win,
+.biggest-loss {
+	background: white;
 }
 
 .match-list > div > h2 {
@@ -55,5 +84,9 @@
 
 .match-date,
 .match-time {
+	justify-self: center;
+}
+
+.match-schedule > h2 {
 	justify-self: center;
 }

@@ -39,11 +39,11 @@ const renderMatchDetails = (match) => {
 const Matches = () => {
 	return (
 		<section className="content matches">
+			<div className="next-match">
+				<h2>Next Match</h2>
+				{renderMatchDetails("next")}
+			</div>
 			<div className="match-list">
-				<div className="next-match">
-					<h2>Upcoming Match</h2>
-					{renderMatchDetails("next")}
-				</div>
 				<div className="last-match">
 					<h2>Last Match</h2>
 					{renderMatchDetails("last")}
@@ -57,7 +57,9 @@ const Matches = () => {
 					{renderMatchDetails("loss")}
 				</div>
 			</div>
-			<div className="match-schedule"></div>
+			<div className="match-schedule">
+				<h2>Upcoming Matches</h2>
+			</div>
 		</section>
 	);
 };
