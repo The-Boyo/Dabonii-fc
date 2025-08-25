@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import "./App.css";
@@ -14,39 +14,39 @@ import About from "./about/About";
 import ScrollYProvider from "../contexts/ScrollYContext";
 
 const App = () => {
-	const [theCurrentContentHeight, setCurrentContentHeight] = useState(null);
+	// const [theCurrentContentHeight, setCurrentContentHeight] = useState(null);
 
-	console.log(theCurrentContentHeight);
+	// console.log(theCurrentContentHeight);
 
-	const setFooterPosition = () => {
-		const containerHeight = document
-			.querySelector(".container")
-			.getBoundingClientRect().height;
+	// const setFooterPosition = () => {
+	// 	const containerHeight = document
+	// 		.querySelector(".container")
+	// 		.getBoundingClientRect().height;
 
-		const currentContentHeight = document
-			.querySelector(".content")
-			.getBoundingClientRect().height;
+	// 	const currentContentHeight = document
+	// 		.querySelector(".content")
+	// 		.getBoundingClientRect().height;
 
-		setCurrentContentHeight(currentContentHeight);
+	// 	setCurrentContentHeight(currentContentHeight);
 
-		const footerHeight = document
-			.querySelector(".footer")
-			.getBoundingClientRect().height;
+	// 	const footerHeight = document
+	// 		.querySelector(".footer")
+	// 		.getBoundingClientRect().height;
 
-		if (currentContentHeight + footerHeight < containerHeight) {
-			document.querySelector(".footer").style.position = "absolute";
-		} else {
-			document.querySelector(".footer").style.position = "relative";
-		}
-	};
+	// 	if (currentContentHeight + footerHeight < containerHeight) {
+	// 		document.querySelector(".footer").style.position = "absolute";
+	// 	} else {
+	// 		document.querySelector(".footer").style.position = "relative";
+	// 	}
+	// };
 
-	useEffect(() => {
-		const resizeObserver = new ResizeObserver(setFooterPosition);
+	// useEffect(() => {
+	// 	const resizeObserver = new ResizeObserver(setFooterPosition);
 
-		resizeObserver.observe(document.querySelector(".container"));
+	// 	resizeObserver.observe(document.querySelector(".container"));
 
-		return () => resizeObserver.disconnect();
-	}, [theCurrentContentHeight]);
+	// 	return () => resizeObserver.disconnect();
+	// }, [theCurrentContentHeight]);
 
 	return (
 		<div className="container">
