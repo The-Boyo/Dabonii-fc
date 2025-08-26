@@ -1,4 +1,7 @@
+import { useEffect } from "react";
 import "./Matches.css";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAllMatches } from "../../features/matches/matchesSlice";
 
 const renderMatchDetails = (match) => {
 	if (match === "next") {
@@ -37,6 +40,15 @@ const renderMatchDetails = (match) => {
 };
 
 const Matches = () => {
+	const matches = useSelector((state) => state.matches.matches);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(fetchAllMatches());
+	}, [dispatch]);
+
+	console.log(matches);
+
 	return (
 		<section className="content matches">
 			<div className="next-match">
