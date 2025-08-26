@@ -78,6 +78,14 @@
 .match-type,
 .match-venue,
 .match-date,
+.match-time,
+.match-teams {
+	text-align: center;
+}
+
+.match-type,
+.match-venue,
+.match-date,
 .match-time {
 	font-size: 14px;
 	margin: 0.3em 0;
