@@ -17,7 +17,7 @@ const Header = () => {
 
 	useEffect(() => {
 		const handleBodyScroll = () => {
-			if (window.scrollY > 0) {
+			if (window.scrollY > 0.000000001) {
 				headerRef.current.style.position = "fixed";
 			} else {
 				headerRef.current.style.position = "relative";
