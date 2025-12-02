@@ -7,4 +7,5 @@
 	display: grid;
 	place-items: center;
 	box-shadow: 3px 0px 3px;
+	flex-basis: 200px;
 }

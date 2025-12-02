@@ -6,8 +6,6 @@
 	padding: 0.3em;
 	background: var(--linear-dabonii-green);
 	box-shadow: 0 1px 3px;
-	/* border-bottom: 1px dashed; */
-	/* position: fixed; */
 	width: 100%;
 	scroll-behavior: smooth;
 	z-index: 2;
